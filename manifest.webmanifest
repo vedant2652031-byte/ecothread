@@ -1,0 +1,16 @@
+{
+  "name": "EcoThread — Teen Action & Sustainable Style",
+  "short_name": "EcoThread",
+  "description": "See the hidden cost of fast fashion, then swap, mend and thrift instead. A youth project for UN SDG 12.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F4F1EA",
+  "theme_color": "#154212",
+  "lang": "en-IN",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

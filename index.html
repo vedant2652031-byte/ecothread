@@ -6,13 +6,16 @@
 <title>EcoThread — Teen Action & Sustainable Style</title>
 <meta name="description" content="EcoThread helps teens see the hidden cost of fast fashion and swap, mend and thrift instead. SDG 12: Responsible Consumption and Production.">
 <meta name="theme-color" content="#154212">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta property="og:title" content="EcoThread — Your outfit shouldn’t cost the planet">
 <meta property="og:description" content="See the hidden cost of fast fashion, take the closet quiz, and swap, mend and thrift instead. A youth project for UN SDG 12.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%23E8A317' stroke='%23154212' stroke-width='3'/%3E%3Cpath d='M8 20h24M20 8v24' stroke='%23154212' stroke-width='3' stroke-dasharray='4 3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Mukta:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --indigo:#154212; --indigo-2:#2D5A27; --indigo-3:#3B6934;
@@ -22,8 +25,8 @@
   --leaf:#3B6934; --leaf-soft:#E5EFE4;
   --ink:#1C2A1A; --ink-2:#42493E; --ink-3:#5F665B;
   --line:rgba(28,42,26,.16);
-  --display:"Anybody", "Arial Narrow", sans-serif;
-  --body:"Atkinson Hyperlegible", system-ui, sans-serif;
+  --display:"Anybody", "Mukta", "Arial Narrow", sans-serif;
+  --body:"Atkinson Hyperlegible", "Mukta", system-ui, sans-serif;
   --r-sm:8px; --r-md:16px; --r-lg:32px;
   --shadow:0 0 0 1px rgba(45,90,39,.08), 0 10px 26px -14px rgba(28,42,26,.28);
 }
@@ -500,6 +503,57 @@ footer{padding-top:60px;position:relative;overflow:hidden}
 /* view transitions */
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
 
+
+/* ================= v4: AI, live impact, language, install ================= */
+.tab-ai{color:#fff!important;background:linear-gradient(120deg,rgba(232,163,23,.28),rgba(200,67,47,.28))}
+.tab-ai[aria-current="page"]{background:var(--marigold)!important;color:var(--indigo)!important}
+.spark{display:inline-block;animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hdr-tools{display:flex;gap:8px;align-items:center;flex:none}
+.lang{display:flex;border:0;padding:3px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-weight:800;font-size:13px}
+.lang span{padding:5px 9px;border-radius:999px}
+html[lang="en"] .lang [data-l="en"],html[lang="hi"] .lang [data-l="hi"]{background:#fff;color:var(--indigo)}
+.install{border:2px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:6px 12px;font-weight:800;font-size:13px}
+.install:hover{background:rgba(255,255,255,.12)}
+@media (max-width:1180px){.hud .lbl{display:none}}
+@media (max-width:760px){.install{display:none}}
+.ai-banner{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;margin-top:20px;padding:20px 24px;border-radius:var(--r-lg);text-decoration:none;color:#fff;background:linear-gradient(110deg,var(--indigo) 0%,var(--indigo-2) 55%,#6B3A1E 130%);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.ai-banner::after{content:"";position:absolute;inset:7px;border:2px dashed rgba(255,255,255,.3);border-radius:26px;pointer-events:none}
+.ai-banner b{display:block;font:900 24px/1.1 var(--display);font-stretch:90%}
+.ai-banner .small{color:rgba(255,255,255,.8)}
+.ai-orb{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:26px;background:radial-gradient(circle at 35% 35%,#FFDEAE,var(--marigold) 55%,var(--rani));color:var(--indigo);box-shadow:0 0 0 6px rgba(232,163,23,.18);animation:orb 3s ease-in-out infinite}
+@keyframes orb{50%{box-shadow:0 0 0 12px rgba(232,163,23,.06)}}
+.ai-banner:hover .btn{transform:translateY(-2px)}
+@media (max-width:620px){.ai-banner{grid-template-columns:auto 1fr}.ai-banner .btn{grid-column:1/-1}}
+.live-impact{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:16px;align-items:center;margin-top:20px;padding:22px 26px;border-radius:var(--r-lg);background:var(--paper);box-shadow:var(--shadow);border-left:8px solid var(--leaf)}
+.live-impact b{display:block;font:900 40px/1 var(--display);font-stretch:78%;color:var(--indigo);font-variant-numeric:tabular-nums}
+.live-impact span{font-size:13px;font-weight:700;color:var(--ink-3)}
+@media (max-width:860px){.live-impact{grid-template-columns:repeat(2,1fr)}.live-impact > div:first-child{grid-column:1/-1}}
+.ai-hero{padding:38px 40px;margin-bottom:22px}
+.ai-hero h2{font-size:clamp(32px,4.6vw,58px)}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media (max-width:900px){.ai-grid{grid-template-columns:1fr}.ai-hero{padding:28px 24px}}
+.ai-h{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.ai-ic{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:#fff;font:900 22px/1 var(--display)}
+.drop{cursor:pointer}
+.drop-in{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:26px;border:2.5px dashed var(--chambray-2);border-radius:var(--r-md);background:var(--chambray);transition:border-color .2s,background .2s;font-weight:400}
+.drop:hover .drop-in,.drop.over .drop-in{border-color:var(--leaf);background:var(--leaf-soft)}
+.drop-ic{font-size:30px}
+.drop:focus-within .drop-in{outline:3px solid var(--marigold);outline-offset:2px}
+#s-prev{width:100%;max-height:260px;object-fit:contain;border-radius:var(--r-md);background:var(--chambray);margin-top:4px}
+.ai-out{margin-top:20px;border-top:2px dashed var(--line);padding-top:20px;animation:rise .45s ease-out}
+.verdict{display:inline-flex;align-items:center;gap:8px;font:900 15px/1 var(--display);padding:8px 14px;border-radius:999px;color:#fff;letter-spacing:.01em}
+.ai-out h4{font:800 22px/1.2 var(--display);font-stretch:92%;margin:12px 0 6px}
+.ai-out ul{margin:8px 0 0;padding-left:20px;display:grid;gap:6px;font-size:15px}
+.ai-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.ai-impact div{background:var(--chambray);border-radius:12px;padding:10px 12px}
+.ai-impact b{display:block;font:900 22px/1.1 var(--display);font-stretch:80%;color:var(--indigo)}
+.ai-impact span{font-size:12px;font-weight:700;color:var(--ink-3)}
+.idea{border:2px solid var(--line);border-radius:var(--r-md);padding:16px;margin-top:12px}
+.idea ol{margin:8px 0 0;padding-left:20px;font-size:15px;display:grid;gap:4px}
+.thinking{display:flex;gap:12px;align-items:center;margin-top:18px;font-weight:700;color:var(--ink-2)}
+.needle{width:34px;height:34px;border-radius:50%;border:4px dashed var(--leaf);animation:spin 1.6s linear infinite}
+
 /* Toasts */
 .toasts{position:fixed;bottom:20px;right:20px;z-index:80;display:grid;gap:8px;max-width:calc(100% - 40px)}
 .toast{background:var(--indigo);color:#fff;padding:13px 18px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);display:flex;gap:10px;align-items:center;animation:tin .25s ease-out}
@@ -517,6 +571,20 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
   .kicker{margin-top:26px}
   .sticker{font-size:20px;padding:9px 12px 8px;top:-12px}
 }
+
+.brand,.brand svg{flex:none}
+.top .wrap{gap:12px}
+.tab{padding:9px 11px;font-size:14.5px}
+.tabs{gap:2px}
+.hud{font-size:13px}
+@media (max-width:1480px){.hud .water{display:none}}
+@media (max-width:1480px){.hud .co2part{display:none}}
+@media (max-width:1300px){.tab{padding:8px 9px;font-size:14px}}
+@media (min-width:761px) and (max-width:1100px){.tabs{order:3;width:100%;margin:0}.top .wrap{flex-wrap:wrap;padding-block:8px}.hdr-tools{margin-left:auto}.hud{margin-left:0}}
+
+html[lang="hi"] .hero h1{font-size:clamp(40px,5.4vw,78px);line-height:1.12}
+html[lang="hi"] h1,html[lang="hi"] h2,html[lang="hi"] h3{line-height:1.2}
+html[lang="hi"] .foot-word{font-size:clamp(48px,9vw,120px);line-height:1.1}
 </style>
 </head>
 <body>
@@ -530,14 +598,19 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
     <nav class="tabs" aria-label="Sections">
       <a class="tab" href="#reality" data-go="reality">The reality</a>
       <a class="tab" href="#quiz" data-go="quiz">Closet quiz</a>
+      <a class="tab tab-ai" href="#ai" data-go="ai"><span class="spark" aria-hidden="true">✦</span> Ask AI</a>
       <a class="tab" href="#lab" data-go="lab">Mend &amp; make</a>
       <a class="tab" href="#swap" data-go="swap">Swap hub</a>
       <a class="tab" href="#closet" data-go="closet">My closet</a>
       <a class="tab" href="#sources" data-go="sources">Sources</a>
     </nav>
+    <div class="hdr-tools">
+      <button type="button" class="lang" id="lang-btn" aria-label="Switch language to Hindi"><span data-l="en">EN</span><span data-l="hi">हिं</span></button>
+      <button type="button" class="install" id="install-btn" hidden>Install app</button>
+    </div>
     <div class="hud" aria-live="polite">
       <button type="button" data-go="closet" aria-label="Your impact so far, open My closet">
-        <span><span class="lbl">Avoided </span><span id="hud-co2">0</span> kg CO₂</span>
+        <span class="co2part"><span class="lbl">Avoided </span><span id="hud-co2">0</span> kg CO₂</span>
         <span class="water"><span id="hud-water">0</span> L</span>
         <span class="pts">★ <span id="hud-pts">0</span></span>
       </button>
@@ -594,6 +667,18 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
       <p>Pick one. Every action earns eco-points, and the real ones count towards the carbon and water you’ve avoided.</p>
     </div>
     <div class="journey reveal" id="journey"></div>
+    <a class="ai-banner reveal" href="#ai" data-go="ai">
+      <span class="ai-orb" aria-hidden="true">✦</span>
+      <span><b>New: ask the AI stylist</b><span class="small">Check if something’s worth buying, or snap an old piece and get three upcycling ideas.</span></span>
+      <span class="btn btn-mari btn-sm">Try it</span>
+    </a>
+    <div class="live-impact reveal" id="live-impact" hidden>
+      <div><h3>Live from EcoThread</h3><p class="small">Anonymous counts from everyone using the site.</p></div>
+      <div><b data-count="0" id="li-quiz">0</b><span>quizzes taken</span></div>
+      <div><b data-count="0" id="li-second">0</b><span>secondhand pieces logged</span></div>
+      <div><b data-count="0" id="li-swap">0</b><span>swaps completed</span></div>
+      <div><b data-count="0" id="li-pledge">0</b><span>pledges posted</span></div>
+    </div>
   </div>
 
   <div class="wrap section" style="padding-top:20px">
@@ -678,6 +763,48 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
       </aside>
     </div>
     <div id="quiz-results" hidden></div>
+  </div>
+</section>
+
+<!-- ================= AI ================= -->
+<section class="view" id="view-ai" aria-labelledby="h-ai">
+  <div class="wrap section">
+    <div class="ai-hero denim">
+      <div style="position:relative;z-index:1">
+        <span class="pill-tag">✦ AI stylist</span>
+        <h2 id="h-ai" style="margin-top:14px">Ask before you buy. Ask before you bin.</h2>
+        <p class="muted" style="margin-top:12px;max-width:60ch">Two quick AI tools. Carbon and water numbers still come from EcoThread’s sourced table, not the AI.</p>
+      </div>
+    </div>
+    <div class="mode" id="ai-note" role="status" hidden></div>
+    <div class="ai-grid">
+      <div class="panel ai-panel">
+        <div class="ai-h"><span class="ai-ic" style="background:var(--rani)" aria-hidden="true">₹</span><div><h3>Should I buy it?</h3><p class="small muted">The AI runs the 30-wear test and finds secondhand alternatives.</p></div></div>
+        <form id="buy-form" class="form-grid" novalidate>
+          <label class="f full">What are you thinking of buying?<input class="input" id="b-item" maxlength="140" placeholder="Cropped polyester cargo pants from a trend app" required></label>
+          <label class="f">Price (₹)<input class="input" id="b-price" type="number" min="0" max="100000" inputmode="numeric" placeholder="799"></label>
+          <label class="f">How often would you wear it?<input class="input" id="b-wears" type="number" min="0" max="1000" inputmode="numeric" placeholder="10"></label>
+          <p class="err full" id="b-err"></p>
+          <button class="btn btn-rani full" type="submit" id="b-go">Check it</button>
+        </form>
+        <div id="buy-out" aria-live="polite"></div>
+      </div>
+      <div class="panel ai-panel">
+        <div class="ai-h"><span class="ai-ic" style="background:var(--leaf)" aria-hidden="true">✂</span><div><h3>Upcycle my old clothes</h3><p class="small muted">Snap or upload a photo of one piece and get three ideas.</p></div></div>
+        <form id="sty-form" class="form-grid" novalidate>
+          <label class="f full drop" id="drop">
+            <input type="file" id="s-file" accept="image/*" capture="environment" class="sr-only">
+            <span class="drop-in" id="drop-in"><span class="drop-ic" aria-hidden="true">📷</span><b>Choose or take a photo</b><span class="small muted">Lay the garment flat. No people in the photo, please.</span></span>
+            <img id="s-prev" alt="Your garment photo" hidden>
+          </label>
+          <label class="f full">Anything to know? (optional)<input class="input" id="s-note" maxlength="140" placeholder="Stain on the front, I like oversized fits"></label>
+          <p class="err full" id="s-err"></p>
+          <button class="btn btn-ink full" type="submit" id="s-go">Get 3 ideas</button>
+        </form>
+        <div id="sty-out" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:18px;max-width:80ch">AI can get things wrong, so use your own judgement. Photos are only sent to the AI to make suggestions; EcoThread doesn’t keep them.</p>
   </div>
 </section>
 
@@ -863,6 +990,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 <nav class="bottomnav" aria-label="Sections (mobile)">
   <a href="#reality" data-go="reality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4 3 7l2 4 2-1v10h10V10l2 1 2-4-4-3c-1 2-3 3-5 3S8 6 7 4Z"/></svg>Reality</a>
   <a href="#quiz" data-go="quiz"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Quiz</a>
+  <a href="#ai" data-go="ai" class="bn-ai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"/></svg>AI</a>
   <a href="#lab" data-go="lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 18 6M15 3l6 6M6 14l4 4"/></svg>Make</a>
   <a href="#swap" data-go="swap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Swap</a>
   <a href="#closet" data-go="closet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6a2 2 0 1 1 2 2l-2 1v2L3 17h18l-9-6"/></svg>Closet</a>
@@ -1169,14 +1297,15 @@ const kg = n => (n < 10 ? (Math.round(n*10)/10).toLocaleString("en-IN") : fmt(n)
 const rupees = n => "₹" + fmt(n);
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
 const CONTACT_RE = /(\+?\d[\d\s().-]{7,}\d)|([\w.+-]+@[\w-]+\.[\w.]{2,})|(https?:\/\/)|(\bwa\.me\b)/i;
-const cleanHandle = h => { h = String(h||"").trim().replace(/\s+/g,"_").replace(/[^\w@.]/g,""); if(!h) return ""; return (h[0]==="@"?h:"@"+h).slice(0,24); };
+const cleanHandle = h => { h = String(h||"").trim().replace(/^@+/,"").replace(/\s+/g,"_").replace(/[^A-Za-z0-9_.]/g,""); return h ? ("@"+h).slice(0,24) : ""; };
 
 /* ===================== Saved state (this browser) ===================== */
 const KEY = "ecothread.v2";
 const DEFAULT = () => ({pts:0, closet:[], commits:[], guidesDone:[], rsvps:[], myListings:[], swapsDone:[], likes:[],
-  local:{listings:[], pledges:[], requests:[]}, haul:[false,false,false,false,false], handle:"", localId:uid(), quizDone:false});
+  local:{listings:[], pledges:[], requests:[]}, haul:[false,false,false,false,false], handle:"", localId:uid(), ownerToken:uid()+uid()+uid(), quizDone:false, lang:"en"});
 let S = DEFAULT();
 try { const raw = localStorage.getItem(KEY); if(raw) S = Object.assign(DEFAULT(), JSON.parse(raw)); } catch(e) {}
+if(!S.ownerToken) S.ownerToken = uid()+uid()+uid();
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} }
 
 /* ===================== Impact (derived, never inflated) ===================== */
@@ -1204,7 +1333,7 @@ function toast(msg, pts){
 }
 
 /* ===================== Router ===================== */
-const VIEWS = ["reality","quiz","lab","swap","closet","sources"];
+const VIEWS = ["reality","quiz","ai","lab","swap","closet","sources"];
 function route(){
   const h = location.hash.slice(1);
   let view = VIEWS.includes(h) ? h : null, anchor = null;
@@ -1381,7 +1510,7 @@ function showResults(){
   $$("#quiz-results [data-count]").forEach(el=>countUp(el));
   scraps($("#quiz-results .score-ring"));
   drawShareCard();
-  if(!S.quizDone){ S.quizDone = true; addPoints(POINTS.quiz, "Closet quiz finished"); }
+  if(!S.quizDone){ S.quizDone = true; addPoints(POINTS.quiz, "Closet quiz finished"); logEvent("quiz"); }
 }
 $("#quiz-results").addEventListener("click", e => {
   const c = e.target.closest("[data-commit]");
@@ -1395,21 +1524,22 @@ $("#quiz-results").addEventListener("click", e => {
     try { navigator.clipboard.writeText(txt).then(done, fail); } catch(err){ fail(); }
   }
 });
+const tt = s => (S.lang==="hi" && typeof trHI==="function" && trHI(s)) || s;
 async function drawShareCard(){
   const r = lastResult, c = document.createElement("canvas"); c.width = 1080; c.height = 1350;
   const x = c.getContext("2d");
-  try { await Promise.all([document.fonts.load('900 100px "Anybody"'), document.fonts.load('700 40px "Atkinson Hyperlegible"')]); } catch(e){}
+  try { await Promise.all([document.fonts.load('900 100px "Anybody"'), document.fonts.load('700 40px "Atkinson Hyperlegible"'), document.fonts.load('800 40px "Mukta"')]); } catch(e){}
   const g = x.createLinearGradient(0,0,1080,1350); g.addColorStop(0,"#2D5A27"); g.addColorStop(1,"#154212"); x.fillStyle = g; x.fillRect(0,0,1080,1350);
   x.strokeStyle = "rgba(255,255,255,.45)"; x.lineWidth = 5; x.setLineDash([22,16]); x.strokeRect(40,40,1000,1270); x.setLineDash([]);
-  x.fillStyle = "#E8A317"; x.font = '900 52px "Anybody", sans-serif'; x.fillText("EcoThread", 96, 150);
-  x.fillStyle = "rgba(255,255,255,.75)"; x.font = '700 34px "Atkinson Hyperlegible", sans-serif'; x.fillText("My closet footprint score", 96, 210);
-  x.fillStyle = "#fff"; x.font = '900 360px "Anybody", sans-serif'; x.fillText(String(r.score), 80, 560);
-  x.fillStyle = "rgba(255,255,255,.6)"; x.font = '700 44px "Atkinson Hyperlegible", sans-serif'; x.fillText("out of 100", 96, 630);
+  x.fillStyle = "#E8A317"; x.font = '900 52px "Anybody", "Mukta", sans-serif'; x.fillText("EcoThread", 96, 150);
+  x.fillStyle = "rgba(255,255,255,.75)"; x.font = '700 34px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.fillText(tt("My closet footprint score"), 96, 210);
+  x.fillStyle = "#fff"; x.font = '900 360px "Anybody", "Mukta", sans-serif'; x.fillText(String(r.score), 80, 560);
+  x.fillStyle = "rgba(255,255,255,.6)"; x.font = '700 44px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.fillText(tt("out of 100"), 96, 630);
   x.fillStyle = "#C8432F"; roundRect(x, 96, 690, 888, 150, 24); x.fill();
-  x.fillStyle = "#fff"; x.font = '900 70px "Anybody", sans-serif'; x.fillText(r.A.name, 136, 790, 820);
-  x.font = '700 40px "Atkinson Hyperlegible", sans-serif'; x.fillStyle = "#fff";
-  wrap(x, "I’m cutting my clothing footprint by swapping, mending and thrifting.", 96, 950, 880, 56);
-  x.fillStyle = "#E8A317"; x.font = '700 36px "Atkinson Hyperlegible", sans-serif'; x.fillText("#SDG12  ·  Responsible consumption", 96, 1230);
+  x.fillStyle = "#fff"; x.font = '900 70px "Anybody", "Mukta", sans-serif'; x.fillText(tt(r.A.name), 136, 790, 820);
+  x.font = '700 40px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.fillStyle = "#fff";
+  wrap(x, tt("I’m cutting my clothing footprint by swapping, mending and thrifting."), 96, 950, 880, 56);
+  x.fillStyle = "#E8A317"; x.font = '700 36px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.fillText("#SDG12  ·  "+tt("Responsible consumption"), 96, 1230);
   $("#share-img").src = c.toDataURL("image/png");
   function roundRect(ctx,a,b,w,h,rad){ ctx.beginPath(); ctx.moveTo(a+rad,b); ctx.arcTo(a+w,b,a+w,b+h,rad); ctx.arcTo(a+w,b+h,a,b+h,rad); ctx.arcTo(a,b+h,a,b,rad); ctx.arcTo(a,b,a+w,b,rad); ctx.closePath(); }
   function wrap(ctx,t,a,b,w,lh){ let line="", y=b; t.split(" ").forEach(word=>{ const test=line+word+" "; if(ctx.measureText(test).width>w && line){ ctx.fillText(line,a,y); line=word+" "; y+=lh; } else line=test; }); ctx.fillText(line,a,y); }
@@ -1463,7 +1593,7 @@ function allListings(){
 function allRequests(){ return shared ? remote.requests : S.local.requests; }
 function renderModeNote(){
   const m = $("#mode-note");
-  if(shared && sharedWritable){ m.className = "mode shared"; m.innerHTML = "<span><b>Live board.</b> Listings and pledges you post here are visible to everyone this page is shared with. Example items are marked so you can tell them apart.</span>"; }
+  if(shared && sharedWritable){ m.className = "mode shared"; m.innerHTML = BACKEND==="supabase" ? "<span><b>Live board.</b> Everyone using EcoThread sees the listings and pledges posted here. Example items are marked so you can tell them apart.</span>" : "<span><b>Live board.</b> Listings and pledges you post here are visible to everyone this page is shared with. Example items are marked so you can tell them apart.</span>"; }
   else if(shared){ m.className = "mode"; m.innerHTML = "<span><b>View only.</b> You can browse the live board, but posting is off for your access level. Anything you post is saved on this device only.</span>"; }
   else { m.className = "mode"; m.innerHTML = "<span><b>Demo mode.</b> What you post is saved on this device only. Items marked “Example” show how the board works.</span>"; }
 }
@@ -1496,10 +1626,96 @@ $("#n-cat").innerHTML = SWAP_CATS.slice(1).map(c=>"<option>"+esc(c)+"</option>")
 $("#n-art").innerHTML = [["tee","T-shirt"],["knit","Sweater / cardigan"],["hoodie","Hoodie"],["jeans","Jeans / trousers"],["jacket","Jacket"],["kurta","Kurta"],["skirt","Skirt"],["bag","Bag"]].map(([k,l])=>'<option value="'+k+'">'+l+'</option>').join("");
 $("#open-list").addEventListener("click", ()=>{ $("#n-err").textContent=""; if(S.handle) $("#n-owner").value = S.handle; openDlg("dlg-list"); $("#n-title").focus(); });
 
-async function writeShared(path, data, del){
-  if(!shared || !sharedWritable) return false;
-  try { const ref = DB.doc(path); if(del) await ref.delete(); else await ref.set(data); return true; }
-  catch(err){ if(err && (err.code==="invalid_argument"||err.code==="revoked")){ sharedWritable = false; renderModeNote(); } else if(err && err.code==="quota_exceeded"){ toast("The board is full. Ask the page owner to clear old listings."); } return false; }
+/* ---- Shared backends: Supabase (on Vercel) or Claude's page store ---- */
+let BACKEND = null, SB = null;
+async function sbFetch(path, opts){
+  opts = opts || {};
+  const r = await fetch(SB.url+"/rest/v1/"+path, {method:opts.method||"GET", headers:Object.assign({apikey:SB.key, Authorization:"Bearer "+SB.key, "Content-Type":"application/json"}, opts.prefer?{Prefer:opts.prefer}:{}), body:opts.body?JSON.stringify(opts.body):undefined});
+  if(!r.ok){ const e = new Error("sb"); e.status = r.status; throw e; }
+  const t = await r.text(); return t ? JSON.parse(t) : null;
+}
+const sbRpc = (fn, args) => sbFetch("rpc/"+fn, {method:"POST", body:args||{}});
+async function sbLoad(){
+  try {
+    const [ls, rq, ps, lk] = await Promise.all([
+      sbFetch("listings?select=id,title,descr,owner,cat,size,cond,art,swapped,created&order=created.desc&limit=300"),
+      sbFetch("requests?select=id,listing_id,handle,offer,meet,by_key,created&order=created.desc&limit=500"),
+      sbFetch("pledges?select=id,handle,body,by_key,created&order=created.desc&limit=300"),
+      sbFetch("likes?select=pledge_id,voter&limit=3000")]);
+    remote.listings = ls.map(x=>({id:x.id,title:x.title,desc:x.descr,owner:x.owner,cat:x.cat,size:x.size,cond:x.cond,art:x.art,swapped:x.swapped,created:+x.created}));
+    remote.requests = rq.map(x=>({id:x.id,listingId:x.listing_id,handle:x.handle,offer:x.offer,where:x.meet,by:x.by_key,created:+x.created}));
+    remote.pledges  = ps.map(x=>({id:x.id,handle:x.handle,text:x.body,by:x.by_key,created:+x.created}));
+    remote.likes    = lk.map(x=>({pledgeId:x.pledge_id, by:x.voter}));
+    $("#mode-note").dataset.live = "1"; renderSwap(); renderPledges();
+  } catch(e){}
+}
+function sharedFail(err){
+  if(BACKEND==="claude" && err && (err.code==="invalid_argument"||err.code==="revoked")){ sharedWritable = false; renderModeNote(); }
+  else if(err && err.code==="quota_exceeded") toast("The board is full. Ask the page owner to clear old listings.");
+  else if(BACKEND==="supabase" && err && err.status===400) toast("The live board rejected that post. Check it has no contact details.");
+  return false;
+}
+const canShare = () => shared && sharedWritable;
+async function opCreateListing(it){
+  if(!canShare()) return false;
+  try {
+    if(BACKEND==="supabase"){ await sbFetch("listings", {method:"POST", prefer:"return=minimal", body:{id:it.id,title:it.title,descr:it.desc,owner:it.owner,cat:it.cat,size:it.size,cond:it.cond,art:it.art,created:it.created,owner_token:S.ownerToken}}); remote.listings.unshift(it); return true; }
+    await DB.doc("listings/"+it.id).set(it); return true;
+  } catch(e){ return sharedFail(e); }
+}
+async function opMarkSwapped(it){
+  if(!canShare()) return false;
+  try {
+    if(BACKEND==="supabase"){ const ok = await sbRpc("mark_swapped", {p_id:it.id, p_token:S.ownerToken}); if(ok){ const r = remote.listings.find(x=>x.id===it.id); if(r) r.swapped = true; } return !!ok; }
+    const upd = Object.assign({}, it, {swapped:true}); delete upd.example; await DB.doc("listings/"+it.id).set(upd); logEvent("swap"); return true;
+  } catch(e){ return sharedFail(e); }
+}
+async function opDeleteListing(id){
+  if(!canShare()) return false;
+  try {
+    if(BACKEND==="supabase"){ const ok = await sbRpc("delete_listing", {p_id:id, p_token:S.ownerToken}); if(ok) remote.listings = remote.listings.filter(x=>x.id!==id); return !!ok; }
+    await DB.doc("listings/"+id).delete(); return true;
+  } catch(e){ return sharedFail(e); }
+}
+async function opRequest(q){
+  if(!canShare()) return false;
+  try {
+    if(BACKEND==="supabase"){ await sbFetch("requests", {method:"POST", prefer:"return=minimal", body:{id:q.id,listing_id:q.listingId,handle:q.handle,offer:q.offer,meet:q.where,by_key:q.by,created:q.created}}); remote.requests.unshift(q); return true; }
+    await DB.doc("requests/"+q.id).set(q); return true;
+  } catch(e){ return sharedFail(e); }
+}
+async function opPledge(p){
+  if(!canShare()) return false;
+  try {
+    if(BACKEND==="supabase"){ await sbFetch("pledges", {method:"POST", prefer:"return=minimal", body:{id:p.id,handle:p.handle,body:p.text,by_key:p.by,created:p.created}}); remote.pledges.unshift(p); return true; }
+    await DB.doc("pledges/"+p.id).set(p); return true;
+  } catch(e){ return sharedFail(e); }
+}
+async function opLike(pid){
+  if(!canShare()) return false;
+  const on = remote.likes.some(l=>l.pledgeId===pid && l.by===myKey());
+  try {
+    if(BACKEND==="supabase"){ const now = await sbRpc("toggle_like", {p_pledge:pid, p_voter:myKey()}); remote.likes = remote.likes.filter(l=>!(l.pledgeId===pid && l.by===myKey())); if(now) remote.likes.push({pledgeId:pid, by:myKey()}); return true; }
+    const ref = DB.doc("likes/"+pid+"__"+myKey().replace(/[^\w.~:@+-]/g,"_")); if(on) await ref.delete(); else await ref.set({pledgeId:pid, by:myKey()}); return true;
+  } catch(e){ return sharedFail(e); }
+}
+function logEvent(kind){
+  try {
+    if(BACKEND==="supabase") sbFetch("events", {method:"POST", prefer:"return=minimal", body:{kind}}).then(fetchStats).catch(()=>{});
+    else if(BACKEND==="claude" && sharedWritable) DB.collection("events").doc().set({kind, at:Date.now()}).then(fetchStats).catch(()=>{});
+  } catch(e){}
+}
+async function fetchStats(){
+  let st = null;
+  try {
+    if(BACKEND==="supabase") st = await sbRpc("get_stats", {});
+    else if(BACKEND==="claude"){ const snap = await DB.collection("events").limit(1000).get(); const c = k => snap.docs.filter(d=>(d.data()||{}).kind===k).length;
+      st = {quiz:c("quiz"), secondhand:c("secondhand"), swap:c("swap"), pledge:remote.pledges.length}; }
+  } catch(e){}
+  if(!st) return;
+  $("#live-impact").hidden = false;
+  [["#li-quiz",st.quiz],["#li-second",st.secondhand],["#li-swap",st.swap],["#li-pledge",st.pledge]].forEach(([id,v])=>{ const el = $(id); const old = +el.dataset.count || 0; el.dataset.count = v||0; if(el.dataset.done) tween(el, old, v||0, n=>Math.round(n).toLocaleString("en-IN")); else el.textContent = (v||0).toLocaleString("en-IN"); });
+  observeReveals();
 }
 $("#list-form").addEventListener("submit", async e=>{
   e.preventDefault();
@@ -1508,7 +1724,7 @@ $("#list-form").addEventListener("submit", async e=>{
   if(CONTACT_RE.test(title+" "+desc)){ $("#n-err").textContent = "Take out phone numbers, emails and links. Arrange the swap in person at school."; return; }
   const item = {id:"l"+uid(), title, desc, owner, cat:$("#n-cat").value, size:$("#n-size").value, cond:$("#n-cond").value, art:$("#n-art").value, created:Date.now(), swapped:false};
   S.handle = owner; S.myListings.push(item.id);
-  const ok = await writeShared("listings/"+item.id, item);
+  const ok = await opCreateListing(item);
   if(!ok) S.local.listings.push(item);
   save(); closeDlg($("#dlg-list")); $("#list-form").reset(); renderSwap();
   addPoints(POINTS.list, ok ? "Listed on the live board" : "Listed on this device");
@@ -1519,12 +1735,11 @@ $("#listings").addEventListener("click", async e=>{
   const r = e.target.closest("[data-req]"), d = e.target.closest("[data-done]"), x = e.target.closest("[data-del]");
   if(r){ reqTarget = allListings().find(i=>i.id===r.dataset.req); $("#r-item").textContent = reqTarget.title+" · "+reqTarget.owner+(reqTarget.example?" (example listing, nothing is sent)":""); $("#r-err").textContent=""; if(S.handle) $("#r-handle").value=S.handle; openDlg("dlg-req"); $("#r-offer").focus(); }
   if(d){ const it = allListings().find(i=>i.id===d.dataset.done); if(!it||it.swapped) return;
-    const upd = Object.assign({}, it, {swapped:true}); delete upd.example;
-    const ok = await writeShared("listings/"+it.id, upd);
+    const ok = await opMarkSwapped(it);
     if(!ok){ const l = S.local.listings.find(i=>i.id===it.id); if(l) l.swapped = true; }
     S.swapsDone.push({id:it.id, art:it.art, at:Date.now()}); save(); renderSwap(); renderHud();
     const g = garmentFor(it.art); toast("Swap logged. That’s "+kg(g.co2*AVOID.co2)+" CO₂e avoided"); }
-  if(x){ const id = x.dataset.del; const ok = await writeShared("listings/"+id, null, true);
+  if(x){ const id = x.dataset.del; const ok = await opDeleteListing(id);
     if(!ok) S.local.listings = S.local.listings.filter(i=>i.id!==id); save(); renderSwap(); toast("Listing removed"); }
 });
 $("#req-form").addEventListener("submit", async e=>{
@@ -1535,7 +1750,7 @@ $("#req-form").addEventListener("submit", async e=>{
   S.handle = handle; closeDlg($("#dlg-req"));
   if(reqTarget.example){ save(); toast("That’s how a request works. Try one on a real listing"); return; }
   const req = {id:"r"+uid(), listingId:reqTarget.id, handle, offer, where, by:myKey(), created:Date.now()};
-  const ok = await writeShared("requests/"+req.id, req);
+  const ok = await opRequest(req);
   if(!ok) S.local.requests.push(req);
   save(); renderSwap(); addPoints(POINTS.request, "Swap request sent to "+reqTarget.owner);
   $("#req-form").reset();
@@ -1567,8 +1782,7 @@ $("#pledges").addEventListener("click", async e=>{
   const b = e.target.closest("[data-like]"); if(!b) return; const id = b.dataset.like;
   const isEx = id.startsWith("xp");
   if(isEx || !shared){ S.likes = S.likes.includes(id) ? S.likes.filter(x=>x!==id) : S.likes.concat(id); save(); renderPledges(); return; }
-  const docId = id+"__"+myKey().replace(/[^\w.~:@+-]/g,"_"), on = remote.likes.some(l=>l.pledgeId===id && l.by===myKey());
-  const ok = await writeShared("likes/"+docId, on ? null : {pledgeId:id, by:myKey()}, on);
+  const ok = await opLike(id); renderPledges();
   if(!ok){ S.likes = S.likes.includes(id) ? S.likes.filter(x=>x!==id) : S.likes.concat(id); save(); renderPledges(); }
 });
 $("#pledge-form").addEventListener("submit", async e=>{
@@ -1578,15 +1792,25 @@ $("#pledge-form").addEventListener("submit", async e=>{
   if(CONTACT_RE.test(text)){ $("#p-err").textContent = "Keep contact details and links off the wall."; return; }
   $("#p-err").textContent = "";
   const p = {id:"p"+uid(), handle, text, created:Date.now(), by:myKey()};
-  const ok = await writeShared("pledges/"+p.id, p);
+  const ok = await opPledge(p);
   if(!ok) S.local.pledges.push(p);
   S.handle = handle; save(); $("#p-text").value = ""; renderPledges();
   addPoints(POINTS.pledge, "Pledge posted");
 });
 
 /* Connect the shared store when the page is hosted with it */
-function connectShared(){
+let AI_SERVER = false, AI_SAMPLE = null;
+async function connectShared(){
+  if(/^https?:/.test(location.protocol)){
+    try {
+      const r = await fetch("api/config", {cache:"no-store"});
+      if(r.ok){ const cfg = await r.json(); AI_SERVER = !!cfg.ai;
+        if(cfg.supabaseUrl && cfg.supabaseKey){ SB = {url:cfg.supabaseUrl, key:cfg.supabaseKey}; BACKEND = "supabase"; shared = true; sharedWritable = true; renderModeNote(); await sbLoad(); fetchStats(); setInterval(()=>{ if(!document.hidden) sbLoad(); }, 20000); renderAiNote(); return; } }
+    } catch(e){}
+  }
+  renderAiNote();
   if(!(window.claude && typeof window.claude.use === "function")) return;
+  window.claude.use("sample").then(s=>{ AI_SAMPLE = s || null; renderAiNote(); }).catch(()=>{});
   window.claude.use("user").then(async u=>{ if(!u) return; USER = u;
     try { viewerId = await u.id(); } catch(e){}
     try { canEdit = !!(await u.canEdit()); } catch(e){}
@@ -1594,7 +1818,7 @@ function connectShared(){
     renderModeNote(); renderSwap(); renderPledges();
   }).catch(()=>{});
   window.claude.use("db").then(db=>{
-    if(!db) return; DB = db; shared = true; renderModeNote();
+    if(!db) return; DB = db; BACKEND = "claude"; shared = true; renderModeNote(); setTimeout(fetchStats, 1500);
     const timer = setTimeout(()=>{ const m=$("#mode-note"); if(m && !m.dataset.live) m.insertAdjacentHTML("beforeend",'<span class="small muted"> Still connecting to the live board…</span>'); }, 10000);
     const sub = (name, q) => q.onSnapshot(snap=>{ remote[name] = snap.docs.map(d=>d.data()).filter(Boolean); if(!snap.metadata.fromCache){ clearTimeout(timer); $("#mode-note").dataset.live="1"; }
         if(name==="listings"||name==="requests") renderSwap(); else renderPledges(); },
@@ -1639,24 +1863,24 @@ $("#cert-form").addEventListener("submit", async e=>{
   x.fillStyle = "#154212"; x.fillRect(0,0,1400,990); x.fillStyle = "#FCF9F2"; rr(x,34,34,1332,922,30); x.fill();
   x.strokeStyle = "#3B6934"; x.lineWidth = 4; x.setLineDash([18,12]); rr(x,58,58,1284,874,22); x.stroke(); x.setLineDash([]);
   x.textAlign = "center";
-  x.fillStyle = "#C8432F"; x.font = '700 30px "Atkinson Hyperlegible", sans-serif'; x.fillText("EcoThread  ·  UN SDG 12", 700, 150);
-  x.fillStyle = "#154212"; x.font = '900 70px "Anybody", sans-serif'; x.fillText("Certificate of Circular Style", 700, 240);
-  x.fillStyle = "#42493E"; x.font = '400 32px "Atkinson Hyperlegible", sans-serif'; x.fillText("This certifies that", 700, 320);
-  x.fillStyle = "#1C2A1A"; let fs = 120; x.font = '900 '+fs+'px "Anybody", sans-serif'; while(x.measureText(name).width > 1100 && fs > 50){ fs -= 6; x.font = '900 '+fs+'px "Anybody", sans-serif'; } x.fillText(name, 700, 440);
+  x.fillStyle = "#C8432F"; x.font = '700 30px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.fillText("EcoThread  ·  UN SDG 12", 700, 150);
+  x.fillStyle = "#154212"; x.font = '900 70px "Anybody", "Mukta", sans-serif'; x.fillText(tt("Certificate of Circular Style"), 700, 240);
+  x.fillStyle = "#42493E"; x.font = '400 32px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.fillText(tt("This certifies that"), 700, 320);
+  x.fillStyle = "#1C2A1A"; let fs = 120; x.font = '900 '+fs+'px "Anybody", "Mukta", sans-serif'; while(x.measureText(name).width > 1100 && fs > 50){ fs -= 6; x.font = '900 '+fs+'px "Anybody", "Mukta", sans-serif'; } x.fillText(name, 700, 440);
   x.fillStyle = "#E8A317"; x.fillRect(450, 470, 500, 6);
-  x.fillStyle = "#42493E"; x.font = '400 32px "Atkinson Hyperlegible", sans-serif';
-  x.fillText("has signed the slow-fashion manifesto"+(club ? " with "+club : "")+",", 700, 540, 1180);
-  x.fillText("promising to wear more, waste less and swap before shopping.", 700, 588, 1180);
-  x.font = '700 28px "Atkinson Hyperlegible", sans-serif'; x.fillStyle = "#3B6934";
-  ["30 wears per piece", "Swap, thrift or mend first", "No throwaway micro-trends"].forEach((t,i)=>x.fillText("✓ "+t, 300+i*400, 680));
+  x.fillStyle = "#42493E"; x.font = '400 32px "Atkinson Hyperlegible", "Mukta", sans-serif';
+  x.fillText(S.lang==="hi" ? "ने"+(club ? " "+club+" के साथ" : "")+" स्लो-फ़ैशन घोषणापत्र पर साइन किया है," : "has signed the slow-fashion manifesto"+(club ? " with "+club : "")+",", 700, 540, 1180);
+  x.fillText(tt("promising to wear more, waste less and swap before shopping."), 700, 588, 1180);
+  x.font = '700 28px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.fillStyle = "#3B6934";
+  ["30 wears per piece", "Swap, thrift or mend first", "No throwaway micro-trends"].forEach((t,i)=>x.fillText("✓ "+tt(t), 300+i*400, 680));
   x.beginPath(); x.arc(700, 810, 72, 0, Math.PI*2); x.fillStyle = "#154212"; x.fill();
   x.strokeStyle = "#E8A317"; x.lineWidth = 4; x.setLineDash([10,7]); x.beginPath(); x.arc(700, 810, 60, 0, Math.PI*2); x.stroke(); x.setLineDash([]);
-  x.fillStyle = "#fff"; x.font = '900 34px "Anybody", sans-serif'; x.fillText("SDG", 700, 806); x.font = '900 30px "Anybody", sans-serif'; x.fillText("12", 700, 840);
-  x.fillStyle = "#5F665B"; x.font = '400 26px "Atkinson Hyperlegible", sans-serif'; x.textAlign = "left";
-  x.fillText(new Date().toLocaleDateString("en-IN", {day:"numeric", month:"long", year:"numeric"}), 130, 850);
-  x.textAlign = "right"; x.fillText("Self-signed pledge", 1270, 850);
+  x.fillStyle = "#fff"; x.font = '900 34px "Anybody", "Mukta", sans-serif'; x.fillText("SDG", 700, 806); x.font = '900 30px "Anybody", "Mukta", sans-serif'; x.fillText("12", 700, 840);
+  x.fillStyle = "#5F665B"; x.font = '400 26px "Atkinson Hyperlegible", "Mukta", sans-serif'; x.textAlign = "left";
+  x.fillText(new Date().toLocaleDateString(S.lang==="hi"?"hi-IN":"en-IN", {day:"numeric", month:"long", year:"numeric"}), 130, 850);
+  x.textAlign = "right"; x.fillText(tt("Self-signed pledge"), 1270, 850);
   const img = $("#cert-img"); img.src = c.toDataURL("image/png"); img.alt = "Certificate of Circular Style for "+name; img.hidden = false;
-  if(!S.certDone){ S.certDone = true; S.handle = S.handle || cleanHandle(name); addPoints(POINTS.pledge, "Manifesto signed"); } else toast("Certificate updated");
+  if(!S.certDone){ S.certDone = true; S.handle = S.handle || cleanHandle(name); addPoints(POINTS.pledge, "Manifesto signed"); logEvent("manifesto"); } else toast("Certificate updated");
   function rr(ctx,a,b,w,h,r){ ctx.beginPath(); ctx.moveTo(a+r,b); ctx.arcTo(a+w,b,a+w,b+h,r); ctx.arcTo(a+w,b+h,a,b+h,r); ctx.arcTo(a,b+h,a,b,r); ctx.arcTo(a,b,a+w,b,r); ctx.closePath(); }
 });
 
@@ -1685,6 +1909,7 @@ $("#closet-form").addEventListener("submit", e=>{
   S.closet.push({id:"c"+uid(), name, type:$("#c-type").value, src, price, wears, created:Date.now()});
   $("#c-err").textContent = ""; $("#closet-form").reset(); save(); renderCloset();
   addPoints(POINTS.closet, src==="new" ? "Added to your closet" : "Secondhand piece logged");
+  if(src!=="new") logEvent("secondhand");
 });
 $("#wardrobe").addEventListener("click", e=>{
   const p=e.target.closest("[data-plus]"), m=e.target.closest("[data-minus]"), r=e.target.closest("[data-rm]");
@@ -1704,6 +1929,111 @@ function renderSources(){
     HAUL_KEYS.map(k=>{ const g=GARMENTS[k]; return '<tr><td><b>'+esc(g.name)+'</b></td><td>'+g.co2+(g.est?' <span class="est">est.</span>':'')+'</td><td>'+fmt(g.water)+'</td><td>'+rupees(g.newPrice)+'</td><td>'+rupees(g.usedPrice)+'</td><td>'+esc(g.note)+'</td></tr>'; }).join("")+'</tbody>';
   $("#assume-list").innerHTML = ASSUMPTIONS.map(a=>'<li>'+esc(a)+'</li>').join("");
 }
+
+/* ===================== 7. AI stylist ===================== */
+const AI_TYPES = ["tee","jeans","hoodie","jacket","kurta","knit","skirt","bag","dress","shoes","other"];
+const AI_RULES = "You are EcoThread's sustainable-fashion helper for Indian teenagers (13-19) and a school SDG 12 project. Stay strictly on clothing, thrifting, mending, upcycling and sustainable fashion. If the input is about anything else, or is unsafe, set \"off_topic\": true and leave the other fields short. Be warm, practical and honest; never shame. Use rupees (₹) and things Indian teens can find (thrift markets, tailors, hand-me-downs, school swaps). Never invent statistics. Do not give carbon or water numbers: the website calculates those from its own sourced table. Reply with ONLY one JSON object, no markdown.";
+const BUY_FMT = '{"off_topic":false,"garment_type":"one of '+AI_TYPES.join("|")+'","fibre_guess":"short","verdict":"skip|wait|go","headline":"max 12 words","reasons":["3 short reasons"],"alternatives":["3 specific secondhand, swap or mend alternatives"],"care_tip":"one sentence"}';
+const STY_FMT = '{"off_topic":false,"not_clothing":false,"garment":"max 8 words","condition":"max 12 words","ideas":[{"title":"max 6 words","difficulty":"Beginner|Intermediate","time":"e.g. 20 min","steps":["3 to 5 short steps"],"guide_id":"one of g1|g2|g3|g4|g5|g6 if it closely matches, else null"}]}';
+const GUIDE_LIST = "g1 tee to boxy crop (no-sew); g2 sashiko knee patch; g3 60-second thrift check; g4 sweatshirt to tote bag; g5 raw-edge hem for jeans; g6 kurta to cropped jacket";
+function aiLangLine(){ return S.lang==="hi" ? "Write every text value in simple Hindi (Devanagari). Keep JSON keys and enum values in English." : "Write in simple English."; }
+function aiAvailable(){ return AI_SERVER || !!AI_SAMPLE; }
+function renderAiNote(){
+  const n = $("#ai-note"); if(!n) return;
+  if(aiAvailable()){ n.hidden = true; return; }
+  n.hidden = false; n.className = "mode";
+  n.innerHTML = /^https?:/.test(location.protocol) ? "<span><b>AI is getting ready.</b> If this message stays, the site owner still needs to add an AI key. Everything else on EcoThread works without it.</span>" : "<span><b>AI needs the live website.</b> Open EcoThread from its web address to use these tools.</span>";
+}
+function extractJSON(t){ const a = t.indexOf("{"), b = t.lastIndexOf("}"); return JSON.parse(t.slice(a, b+1)); }
+async function askAI(payload, imageBlob){
+  if(AI_SAMPLE){
+    let prompt;
+    if(payload.mode==="buy") prompt = AI_RULES+"\n"+aiLangLine()+"\nTask: a teen is thinking of buying this. Help them decide using the 30-wear test, the fibre, and secondhand alternatives.\nItem: \""+payload.item+"\"\nPrice: "+(payload.price?"₹"+payload.price:"not given")+"\nTimes they expect to wear it: "+(payload.wears||"not given")+"\nFormat: "+BUY_FMT;
+    else prompt = AI_RULES+"\n"+aiLangLine()+"\nTask: look at the attached photo of an old garment and suggest exactly 3 realistic upcycling or restyling ideas a teen can do at home. If it shows no clothing, set \"not_clothing\": true and return an empty ideas list. Never describe any person in the photo.\nTheir note: \""+(payload.note||"none")+"\"\nSite guides you can link: "+GUIDE_LIST+"\nFormat: "+STY_FMT;
+    const opts = {modelTier:"quick"};
+    if(imageBlob){ let lim = null; try { lim = await AI_SAMPLE.limits(); } catch(e){} if(!lim || !lim.images) throw {code:"no_images"}; opts.images = [imageBlob]; }
+    const res = await AI_SAMPLE(prompt, opts);
+    return extractJSON(res.text);
+  }
+  const r = await fetch("api/ai", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(Object.assign({lang:S.lang}, payload))});
+  let j = null; try { j = await r.json(); } catch(e){}
+  if(!r.ok) throw {code:(j && j.error) || "failed"};
+  return j;
+}
+function aiErr(e){
+  const c = e && e.code;
+  if(c==="not_configured") return "AI isn’t switched on for this copy of the site yet.";
+  if(c==="rate_limited") return "That’s a lot of questions! Wait a few minutes and try again.";
+  if(c==="not_granted") return "AI access wasn’t allowed on this page.";
+  if(c==="no_images") return "Photo ideas aren’t available here. Try the live website.";
+  if(c==="bad_image") return "That photo didn’t work. Try a smaller JPG or PNG.";
+  return "The AI couldn’t answer just now. Try again in a moment.";
+}
+function thinking(el, msg){ el.innerHTML = '<div class="thinking"><span class="needle" aria-hidden="true"></span><span>'+esc(msg)+'</span></div>'; }
+const VERDICT = {skip:["Skip it","var(--rani)"], wait:["Wait 48 hours","var(--marigold)"], go:["Go for it","var(--leaf)"]};
+$("#buy-form").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const item = $("#b-item").value.trim(), price = parseInt($("#b-price").value,10)||0, wears = parseInt($("#b-wears").value,10)||0;
+  if(item.length < 3){ $("#b-err").textContent = "Describe the item in a few words."; return; }
+  if(CONTACT_RE.test(item)){ $("#b-err").textContent = "Leave out links, phone numbers and emails."; return; }
+  $("#b-err").textContent = ""; const out = $("#buy-out"), btn = $("#b-go"); btn.disabled = true; thinking(out, "Checking the label, the fibre and the 30-wear test…");
+  try {
+    const r = await askAI({mode:"buy", item, price, wears});
+    if(r.off_topic){ out.innerHTML = '<div class="ai-out"><p>I can only help with clothes and sustainable style. Try describing a piece of clothing.</p></div>'; return; }
+    const v = VERDICT[r.verdict] || VERDICT.wait, g = GARMENTS[r.garment_type];
+    const impact = g ? '<div class="ai-impact"><div><b>'+kg(g.co2)+'</b><span>CO₂e if bought new</span></div><div><b>'+fmt(g.water)+' L</b><span>water if bought new</span></div><div><b>'+(price&&wears?rupees(price/wears):"–")+'</b><span>cost per wear</span></div></div><p class="small muted">Impact from EcoThread’s table for a typical '+esc(g.name.toLowerCase())+'. Buying secondhand avoids about '+kg(g.co2*AVOID.co2)+' and '+fmt(g.water*AVOID.water)+' L.</p>' : (price&&wears ? '<div class="ai-impact"><div><b>'+rupees(price/wears)+'</b><span>cost per wear</span></div></div>' : "");
+    out.innerHTML = '<div class="ai-out"><span class="verdict" style="background:'+v[1]+'">'+esc(v[0])+'</span><h4>'+esc(r.headline||"")+'</h4>'+(r.fibre_guess?'<p class="small muted">Fibre: '+esc(r.fibre_guess)+'</p>':'')+impact+
+      '<h4 style="font-size:18px">Why</h4><ul>'+(r.reasons||[]).slice(0,4).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>'+
+      '<h4 style="font-size:18px">Try instead</h4><ul>'+(r.alternatives||[]).slice(0,4).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>'+
+      (r.care_tip?'<p class="tip" style="margin-top:14px"><span class="bulb" aria-hidden="true">i</span><span>'+esc(r.care_tip)+'</span></p>':'')+'</div>';
+    if(!S.aiBuy){ S.aiBuy = true; addPoints(15, "First AI check done"); } logEvent("ai");
+  } catch(err){ out.innerHTML = '<div class="ai-out"><p class="err">'+esc(aiErr(err))+'</p></div>'; }
+  finally { btn.disabled = false; }
+});
+let styBlob = null;
+async function shrinkImage(file){
+  const bmp = await createImageBitmap(file); const s = Math.min(1, 1024/Math.max(bmp.width, bmp.height));
+  const c = document.createElement("canvas"); c.width = Math.round(bmp.width*s); c.height = Math.round(bmp.height*s);
+  c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+  return await new Promise(res=>c.toBlob(res, "image/jpeg", .82));
+}
+function blobToB64(b){ return new Promise((res,rej)=>{ const fr = new FileReader(); fr.onload = ()=>res(String(fr.result).split(",")[1]); fr.onerror = rej; fr.readAsDataURL(b); }); }
+async function takeFile(f){
+  if(!f) return; if(!/^image\//.test(f.type)){ $("#s-err").textContent = "Choose an image file."; return; }
+  $("#s-err").textContent = "";
+  try { styBlob = await shrinkImage(f); } catch(e){ styBlob = f; }
+  const p = $("#s-prev"); p.src = URL.createObjectURL(styBlob); p.hidden = false; $("#drop-in").hidden = true;
+}
+$("#s-file").addEventListener("change", e=>takeFile(e.target.files[0]));
+const dropEl = $("#drop");
+["dragenter","dragover"].forEach(ev=>dropEl.addEventListener(ev, e=>{ e.preventDefault(); dropEl.classList.add("over"); }));
+["dragleave","drop"].forEach(ev=>dropEl.addEventListener(ev, e=>{ e.preventDefault(); dropEl.classList.remove("over"); }));
+dropEl.addEventListener("drop", e=>takeFile(e.dataTransfer.files[0]));
+$("#sty-form").addEventListener("submit", async e=>{
+  e.preventDefault();
+  if(!styBlob){ $("#s-err").textContent = "Add a photo of the garment first."; return; }
+  const note = $("#s-note").value.trim();
+  if(CONTACT_RE.test(note)){ $("#s-err").textContent = "Leave out links, phone numbers and emails."; return; }
+  $("#s-err").textContent = ""; const out = $("#sty-out"), btn = $("#s-go"); btn.disabled = true; thinking(out, "Looking at the fabric and sketching ideas…");
+  try {
+    const r = AI_SAMPLE ? await askAI({mode:"stylist", note}, styBlob) : await askAI({mode:"stylist", note, mediaType:"image/jpeg", image: await blobToB64(styBlob)});
+    if(r.off_topic || r.not_clothing){ out.innerHTML = '<div class="ai-out"><p>I couldn’t spot a garment in that photo. Try laying one piece flat in good light.</p></div>'; return; }
+    out.innerHTML = '<div class="ai-out"><h4>'+esc(r.garment||"Your piece")+'</h4>'+(r.condition?'<p class="small muted">'+esc(r.condition)+'</p>':'')+
+      (r.ideas||[]).slice(0,3).map((d,i)=>{ const gd = GUIDES.find(g=>g.id===d.guide_id);
+        return '<div class="idea"><span class="pill">'+esc(d.difficulty||"")+(d.time?' · '+esc(d.time):'')+'</span><h4 style="font-size:19px;margin-top:8px">'+(i+1)+'. '+esc(d.title||"")+'</h4><ol>'+(d.steps||[]).slice(0,5).map(s=>'<li>'+esc(s)+'</li>').join("")+'</ol>'+
+        (gd?'<button class="btn btn-sm btn-ghost" type="button" data-open-guide="'+gd.id+'" style="margin-top:10px">Open the “'+esc(gd.title)+'” guide</button>':'')+'</div>'; }).join("")+'</div>';
+    if(!S.aiSty){ S.aiSty = true; addPoints(15, "First upcycle ideas"); } logEvent("ai");
+  } catch(err){ out.innerHTML = '<div class="ai-out"><p class="err">'+esc(aiErr(err))+'</p></div>'; }
+  finally { btn.disabled = false; }
+});
+$("#sty-out").addEventListener("click", e=>{ const b = e.target.closest("[data-open-guide]"); if(b) openGuide(b.dataset.openGuide); });
+
+/* ===================== 8. Installable app ===================== */
+let installEvt = null;
+window.addEventListener("beforeinstallprompt", e=>{ e.preventDefault(); installEvt = e; $("#install-btn").hidden = false; });
+$("#install-btn").addEventListener("click", async ()=>{ if(!installEvt) return; installEvt.prompt(); try { await installEvt.userChoice; } catch(e){} installEvt = null; $("#install-btn").hidden = true; });
+window.addEventListener("appinstalled", ()=>{ $("#install-btn").hidden = true; toast("EcoThread installed"); });
+try { if("serviceWorker" in navigator && /^https?:/.test(location.protocol) && window.top === window && !/claude/.test(location.hostname)) navigator.serviceWorker.register("sw.js").catch(()=>{}); } catch(e){}
 
 /* ===================== v3 motion helpers ===================== */
 const REDUCE = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1764,6 +2094,293 @@ function renderAll(){ renderTape(); renderFloaters(); renderJourney(); renderRul
   $("#quiz-results").hidden = true; $("#quiz-layout").hidden = false; }
 qStep = 0; qAns = [];
 renderAll(); route(); firstRoute = false; sizeStitch(); setTimeout(sizeStitch, 300); connectShared();
+</script>
+<script>
+"use strict";
+/* ===================== Hindi translation (हिंदी) ===================== */
+const HI = {
+/* header, nav, footer */
+"The reality":"असलियत","Closet quiz":"क्लोज़ेट क्विज़","Ask AI":"AI से पूछें","Mend & make":"सिलो और बनाओ","Swap hub":"स्वैप हब","My closet":"मेरी अलमारी","Sources":"स्रोत",
+"Reality":"असलियत","Quiz":"क्विज़","AI":"AI","Make":"बनाओ","Swap":"स्वैप","Closet":"अलमारी","Avoided":"बचाया","Install app":"ऐप इंस्टॉल करें",
+"Skip to content":"मुख्य सामग्री पर जाएँ","Sections":"हिस्से","Sections (mobile)":"हिस्से (मोबाइल)","Footer":"फ़ुटर","EcoThread home":"EcoThread होम",
+"Your impact so far, open My closet":"अब तक आपका असर, मेरी अलमारी खोलें","Switch language to Hindi":"भाषा अंग्रेज़ी में बदलें",
+"Wear it again.":"फिर से पहनो।","A youth project for UN Sustainable Development Goal 12: Responsible Consumption and Production.":"संयुक्त राष्ट्र सतत विकास लक्ष्य 12 (ज़िम्मेदार उपभोग और उत्पादन) के लिए एक युवा प्रोजेक्ट।",
+"Every number on this site is sourced.":"इस साइट का हर आँकड़ा किसी स्रोत से है।","See how.":"कैसे, देखें।",
+/* hero */
+"A youth project for UN SDG 12":"UN SDG 12 के लिए एक युवा प्रोजेक्ट","Your outfit":"तुम्हारा आउटफ़िट","shouldn’t cost":"धरती की कीमत पर","the planet.":"नहीं होना चाहिए।",
+"The price on a fast-fashion tag leaves out the water, the carbon and the landfill. EcoThread shows you the full cost, then helps you thrift, mend and swap your way to a closet you actually love.":"फ़ास्ट-फ़ैशन के टैग की कीमत में पानी, कार्बन और कचरे का हिसाब नहीं होता। EcoThread पूरी कीमत दिखाता है, फिर थ्रिफ़्ट, मरम्मत और स्वैप से ऐसी अलमारी बनाने में मदद करता है जो तुम्हें सच में पसंद हो।",
+"Take the closet quiz":"क्लोज़ेट क्विज़ दो","Browse the swap rack":"स्वैप रैक देखो","Responsible consumption":"ज़िम्मेदार उपभोग",
+"A ₹399 t-shirt price tag listing its hidden costs":"₹399 की टी-शर्ट का टैग, उसकी छिपी कीमतों के साथ",
+"Basic cotton tee":"सादी कॉटन टी","What the tag doesn’t say":"जो टैग नहीं बताता","Fresh water":"साफ़ पानी","Carbon":"कार्बन","Worn before it’s binned":"फेंकने से पहले पहनी गई","~7 times":"~7 बार",
+"Fast facts":"झटपट तथ्य",
+"2,700 L of water behind one cotton tee":"एक कॉटन टी के पीछे 2,700 लीटर पानी","Less than 1% of clothing material is recycled into new clothes":"कपड़ों के 1% से भी कम मटीरियल से नए कपड़े बनते हैं",
+"7.8 million tonnes of textile waste a year in India":"भारत में हर साल 78 लाख टन कपड़ों का कचरा","One garbage truck of textiles burned or dumped every second":"हर सेकंड कपड़ों से भरा एक कचरा ट्रक जलाया या फेंका जाता है",
+"Clothes are worn 36% fewer times than in 2000":"साल 2000 के मुकाबले कपड़े 36% कम बार पहने जाते हैं","35% of primary ocean microplastics come from washing synthetics":"समुद्र के 35% प्राथमिक माइक्रोप्लास्टिक सिंथेटिक कपड़े धोने से आते हैं","Swapping is free":"स्वैप करना मुफ़्त है",
+"of global greenhouse emissions come from fashion. Estimates vary a lot, and most studies land near the low end.":"दुनिया के ग्रीनहाउस उत्सर्जन का इतना हिस्सा फ़ैशन से आता है। अनुमान बहुत अलग-अलग हैं, और ज़्यादातर अध्ययन निचले छोर के पास हैं।",
+"of textile waste piles up in India every year, about 8.5% of the world’s total.":"कपड़ों का कचरा भारत में हर साल जमा होता है, दुनिया के कुल का लगभग 8.5%।",
+"of material used for clothing gets recycled into new clothes. One garbage truck of textiles is burned or dumped every second.":"कपड़ों के मटीरियल से ही नए कपड़े बनते हैं। हर सेकंड कपड़ों का एक ट्रक जलाया या फेंका जाता है।",
+"Mt":"मिलियन टन",
+/* journey + AI banner + live impact */
+"Four ways to start":"शुरू करने के चार तरीके","Pick one. Every action earns eco-points, and the real ones count towards the carbon and water you’ve avoided.":"कोई एक चुनो। हर काम पर इको-पॉइंट मिलते हैं, और असली कदम तुम्हारे बचाए कार्बन और पानी में गिने जाते हैं।",
+"Six questions, a live footprint estimate and a score card to share.":"छह सवाल, लाइव फ़ुटप्रिंट अनुमान और शेयर करने लायक स्कोर कार्ड।","2 min":"2 मिनट",
+"Mend or make something":"कुछ सिलो या बनाओ","Six step-by-step projects, from a no-sew crop to a sashiko patch.":"छह आसान प्रोजेक्ट, बिना सिलाई वाले क्रॉप से साशिको पैच तक।","From 5 min":"5 मिनट से",
+"Swap instead of shop":"खरीदो नहीं, स्वैप करो","List a piece, request a swap and plan a swap day at school.":"कपड़ा लिस्ट करो, स्वैप माँगो और स्कूल में स्वैप डे प्लान करो।",
+"Track your closet":"अपनी अलमारी ट्रैक करो","Log what you own and watch cost per wear drop with every outfit repeat.":"जो है उसे लिखो और हर बार दोबारा पहनने पर प्रति-पहनावा कीमत घटती देखो।","Saves progress":"प्रगति सेव होती है","Start":"शुरू करो",
+"New: ask the AI stylist":"नया: AI स्टाइलिस्ट से पूछो","Check if something’s worth buying, or snap an old piece and get three upcycling ideas.":"जाँचो कि कोई चीज़ खरीदने लायक है या नहीं, या पुराने कपड़े की फ़ोटो लेकर तीन अपसाइकलिंग आइडिया पाओ।","Try it":"आज़माओ",
+"Live from EcoThread":"EcoThread से लाइव","Anonymous counts from everyone using the site.":"साइट इस्तेमाल करने वाले सभी लोगों की गुमनाम गिनती।",
+"quizzes taken":"क्विज़ दिए गए","secondhand pieces logged":"सेकंडहैंड कपड़े दर्ज","swaps completed":"स्वैप पूरे हुए","pledges posted":"प्रण पोस्ट हुए",
+/* haul */
+"Build a haul":"अपनी शॉपिंग बनाओ","Five pieces on the rail. Tap each one to switch between buying it new and finding it secondhand, and watch the totals change.":"रैक पर पाँच कपड़े हैं। हर एक पर टैप करके नया और सेकंडहैंड के बीच बदलो, और कुल असर बदलता देखो।",
+"Cotton tee":"कॉटन टी","Jeans":"जींस","Hoodie":"हुडी","Denim jacket":"डेनिम जैकेट","Cotton kurta":"कॉटन कुर्ता","New":"नया","Secondhand":"सेकंडहैंड",
+"You spend":"तुम्हारा खर्च","Cost per wear":"प्रति-पहनावा कीमत",
+"Figures are lifetime estimates per garment. Jeans and tee are from published studies; others are EcoThread estimates scaled from them.":"आँकड़े हर कपड़े के पूरे जीवन के अनुमान हैं। जींस और टी प्रकाशित अध्ययनों से हैं; बाकी उन्हीं पर आधारित EcoThread के अनुमान हैं।","See the method":"तरीका देखो",
+/* decoder */
+"Read the real price tag":"असली प्राइस टैग पढ़ो","Pick a garment":"कपड़ा चुनो","Bought new":"नया खरीदा","Thrifted or swapped":"थ्रिफ़्ट या स्वैप किया","estimate":"अनुमान","est.":"अनु.",
+"Where it’s from":"यह कहाँ से है","source":"स्रोत","Carbon avoided":"बचा कार्बन","Water avoided":"बचा पानी","Why not 100%?":"100% क्यों नहीं?","You still wash and dry it. Production is what you skip.":"धोना-सुखाना तो फिर भी होता है। बचता है सिर्फ़ बनाने का असर।","Method":"तरीका",
+"Water from WWF. Carbon is our estimate inside the 2–7 kg range most studies give.":"पानी WWF से। कार्बन हमारा अनुमान है, ज़्यादातर अध्ययनों की 2–7 kg रेंज के अंदर।",
+"Levi’s 501 full life-cycle study, including washing at home.":"Levi’s 501 का पूरा जीवन-चक्र अध्ययन, घर पर धुलाई समेत।","Estimated by scaling the jeans study to a heavier cotton-blend garment.":"जींस अध्ययन को भारी कॉटन-ब्लेंड कपड़े के हिसाब से बढ़ाकर अनुमान।",
+"Estimated by scaling the jeans study by fabric weight.":"कपड़े के वज़न के हिसाब से जींस अध्ययन से अनुमान।","Estimated from the cotton tee, adjusted for a longer garment.":"कॉटन टी से अनुमान, लंबे कपड़े के हिसाब से।",
+/* myths */
+"Myth or reality?":"मिथक या असलियत?","Four things most of us believe about clothes. Tap a card to flip it.":"कपड़ों के बारे में चार बातें जो ज़्यादातर लोग मानते हैं। कार्ड पलटने के लिए टैप करो।","Tap to flip":"पलटने के लिए टैप करो",
+"“Sustainable fashion is too expensive for teens.”":"“सस्टेनेबल फ़ैशन टीनेजर्स के लिए बहुत महँगा है।”","“The donation bin turns old clothes into new ones.”":"“दान वाले डिब्बे से पुराने कपड़े नए बन जाते हैं।”","“Polyester is harmless.”":"“पॉलिएस्टर से कोई नुकसान नहीं।”","“One teen can’t change anything.”":"“एक टीनेजर कुछ नहीं बदल सकता।”",
+"The greenest clothes are already in your cupboard. Swapping with friends is free and a thrifted tee is around ₹150, less than half the price of a new one.":"सबसे ग्रीन कपड़े पहले से तुम्हारी अलमारी में हैं। दोस्तों से स्वैप मुफ़्त है और थ्रिफ़्ट की टी करीब ₹150 की, नई की आधी से भी कम कीमत।",
+"Less than 1% of clothing material is recycled into new clothes. Poly-cotton blends are very hard to separate, so many donations are downcycled, exported or dumped.":"कपड़ों के 1% से भी कम मटीरियल से नए कपड़े बनते हैं। पॉली-कॉटन ब्लेंड अलग करना बहुत मुश्किल है, इसलिए कई दान किए कपड़े सस्ते काम में लगते हैं, विदेश भेजे जाते हैं या फेंक दिए जाते हैं।",
+"Polyester, acrylic and nylon are plastics made from oil. Washing them sheds microfibres, the largest single source of primary microplastics reaching the ocean.":"पॉलिएस्टर, एक्रेलिक और नायलॉन तेल से बने प्लास्टिक हैं। धोने पर इनसे माइक्रोफ़ाइबर निकलते हैं, जो समुद्र तक पहुँचने वाले प्राथमिक माइक्रोप्लास्टिक का सबसे बड़ा स्रोत है।",
+"Trends start with young people. When a whole class normalises outfit-repeating and thrift flips, demand for weekly hauls falls, and so does overproduction.":"ट्रेंड युवाओं से शुरू होते हैं। जब पूरी क्लास कपड़े दोहराना और थ्रिफ़्ट फ़्लिप आम बना देती है, तो हर हफ़्ते की शॉपिंग की माँग घटती है, और ज़्यादा उत्पादन भी।",
+"Try this: Host a five-friend swap":"यह करो: पाँच दोस्तों का स्वैप रखो","Try this: Mend, upcycle or swap directly":"यह करो: सीधे मरम्मत, अपसाइकल या स्वैप करो","Try this: Wash cold, wash less, choose natural fibres":"यह करो: ठंडे पानी में, कम धोओ, प्राकृतिक फ़ाइबर चुनो","Try this: Post your pledge on the wall":"यह करो: दीवार पर अपना प्रण लिखो",
+/* UN target */
+"UN SDG Target 12.5 · by 2030":"UN SDG लक्ष्य 12.5 · 2030 तक","What the UN target means for your closet":"UN लक्ष्य तुम्हारी अलमारी के लिए क्या मतलब रखता है",
+"“Substantially reduce waste generation through prevention, reduction, recycling and reuse.”":"“रोकथाम, कमी, रीसाइक्लिंग और दोबारा इस्तेमाल से कचरा बनना काफ़ी कम करना।”","UN Sustainable Development Goal 12, Target 12.5":"UN सतत विकास लक्ष्य 12, लक्ष्य 12.5",
+"Prevention comes first in that list. For clothes, that means buying less and wearing longer before anything gets recycled. These three habits do exactly that.":"उस सूची में रोकथाम सबसे पहले है। कपड़ों के लिए इसका मतलब है कम खरीदना और रीसाइक्लिंग से पहले ज़्यादा देर पहनना। ये तीन आदतें यही करती हैं।",
+"Pause for 48 hours":"48 घंटे रुको","Leave it in the cart for two days. If you still want it after that, it’s probably worth it.":"दो दिन कार्ट में छोड़ दो। उसके बाद भी चाहिए, तो शायद लेने लायक है।",
+"The 30-wear test":"30-बार वाला टेस्ट","Only buy it if you can picture wearing it at least 30 times.":"तभी खरीदो जब सोच सको कि कम से कम 30 बार पहनोगे।",
+"Swap before you shop":"खरीदने से पहले स्वैप","Check the swap rack and your friends’ cupboards before any checkout.":"किसी भी चेकआउट से पहले स्वैप रैक और दोस्तों की अलमारी देखो।",
+"Make it a challenge":"इसे चैलेंज बनाओ","Challenge added":"चैलेंज जुड़ गया",
+/* quiz */
+"How heavy is your wardrobe?":"तुम्हारी अलमारी कितनी भारी है?","Six honest questions. You get a score, an estimate of your yearly clothing footprint, and three challenges sized to your habits.":"छह सच्चे सवाल। तुम्हें स्कोर, सालाना कपड़ों के फ़ुटप्रिंट का अनुमान, और तुम्हारी आदतों के हिसाब से तीन चैलेंज मिलेंगे।",
+"Back":"पीछे","Next question":"अगला सवाल","See my result":"मेरा नतीजा देखो","Did you know?":"क्या तुम जानते हो?",
+"Live wardrobe impact":"अलमारी का लाइव असर","Yearly estimate. Updates as you answer; unanswered questions use middle values.":"सालाना अनुमान। जवाब देते ही बदलता है; बिना जवाब वाले सवालों के लिए बीच के मान लिए गए हैं।",
+"kg CO₂e a year":"kg CO₂e हर साल","litres a year":"लीटर हर साल","spent a year":"हर साल खर्च","Lightest possible":"सबसे हल्का","Heaviest possible":"सबसे भारी",
+"Answer the first question to start the estimate.":"अनुमान शुरू करने के लिए पहले सवाल का जवाब दो।","Light footprint so far. Nice.":"अब तक हल्का फ़ुटप्रिंट। बढ़िया।",
+"Middle of the range. A few habits could move this a lot.":"बीच में हो। कुछ आदतें इसे काफ़ी बदल सकती हैं।","Heavy so far. Buying less, and more of it secondhand, moves this the most.":"अब तक भारी। कम खरीदना, और ज़्यादा सेकंडहैंड लेना, इसे सबसे ज़्यादा घटाता है।",
+"How often do you buy new clothes?":"तुम कितनी बार नए कपड़े खरीदते हो?","Count online orders, mall trips and sale impulse buys.":"ऑनलाइन ऑर्डर, मॉल और सेल वाली अचानक खरीद भी गिनो।",
+"Every week or two":"हर एक-दो हफ़्ते","Always something new in the cart":"कार्ट में हमेशा कुछ नया","About once a month":"महीने में लगभग एक बार","Seasonal refresh":"मौसम के हिसाब से","Every few months, when I need something":"कुछ महीनों में, ज़रूरत पड़ने पर","Selective":"सोच-समझकर","Rarely":"बहुत कम","I mostly thrift, swap or re-wear":"ज़्यादातर थ्रिफ़्ट, स्वैप या दोबारा पहनता/पहनती हूँ",
+"Where do your most-worn clothes come from?":"तुम्हारे सबसे ज़्यादा पहने जाने वाले कपड़े कहाँ से आते हैं?","Think of your ten favourite pieces this month.":"इस महीने के अपने दस पसंदीदा कपड़ों के बारे में सोचो।",
+"Ultra-cheap trend apps":"बहुत सस्ते ट्रेंड ऐप","₹199–₹499 express orders":"₹199–₹499 के झटपट ऑर्डर","High-street chains":"बड़े ब्रांड स्टोर","Mall and big-brand basics":"मॉल और बड़े ब्रांड की बेसिक चीज़ें","Half new, half secondhand":"आधे नए, आधे सेकंडहैंड","Thrift, vintage, hand-me-downs":"थ्रिफ़्ट, विंटेज, उतरन","Mostly secondhand or swapped":"ज़्यादातर सेकंडहैंड या स्वैप किए","Pre-loved by default":"पहले से पसंद किए हुए",
+"How many times do you wear a trendy piece?":"ट्रेंडी कपड़ा तुम कितनी बार पहनते हो?","Be honest about party tops and one-photo outfits.":"पार्टी टॉप और एक-फ़ोटो वाले आउटफ़िट के बारे में सच बताना।",
+"1–3 times":"1–3 बार","Then it’s over":"फिर खत्म","5–10 times":"5–10 बार","One season":"एक मौसम","15–30 times":"15–30 बार","A real staple":"पक्का पसंदीदा","30+ times":"30+ बार","I repeat outfits proudly":"मैं गर्व से कपड़े दोहराता/दोहराती हूँ",
+"A button pops or your jeans rip. What happens?":"बटन टूट जाए या जींस फट जाए, तो क्या होता है?","Your repair reflex decides how long clothes live.":"मरम्मत की आदत तय करती है कि कपड़े कितने दिन चलेंगे।",
+"Bin it and order a new one":"फेंककर नया मँगाता/मँगाती हूँ","Straight to landfill":"सीधे कचरे में","It sits at the back of the cupboard":"अलमारी के पीछे पड़ा रहता है","Out of sight":"नज़र से दूर","Into the donation bag":"दान वाले थैले में","Second life, maybe":"शायद दूसरी ज़िंदगी","I fix it, patch it or flip it":"ठीक करता/करती हूँ, पैच लगाता/लगाती हूँ या बदल देता/देती हूँ","Back in rotation":"फिर से इस्तेमाल में",
+"How do you wash and dry clothes?":"तुम कपड़े कैसे धोते और सुखाते हो?","About a third of a pair of jeans’ carbon comes from laundry.":"जींस के कार्बन का लगभग तिहाई हिस्सा धुलाई से आता है।",
+"Hot wash and tumble dryer":"गर्म पानी और ड्रायर","High energy, more wear":"ज़्यादा बिजली, ज़्यादा घिसाई","Cold wash, machine dry":"ठंडा पानी, मशीन ड्रायर","Halfway there":"आधा रास्ता","Cold wash, line dry most things":"ठंडा पानी, ज़्यादातर रस्सी पर सुखाना","Smart care":"समझदार देखभाल","Cold, full loads, line dry, wash less":"ठंडा पानी, पूरी मशीन, रस्सी पर सुखाना, कम धोना","Low-carbon laundry":"कम-कार्बन धुलाई",
+"Do you check the fabric tag before buying?":"खरीदने से पहले कपड़े का टैग देखते हो?","Synthetics shed microplastics; natural fibres breathe and last.":"सिंथेटिक से माइक्रोप्लास्टिक निकलता है; प्राकृतिक फ़ाइबर हवादार और टिकाऊ होते हैं।",
+"Never":"कभी नहीं","Price and looks only":"सिर्फ़ कीमत और लुक","Only if it feels scratchy":"सिर्फ़ जब चुभे","Comfort check":"आराम की जाँच","Usually, I avoid thin polyester":"आमतौर पर, पतला पॉलिएस्टर नहीं लेता/लेती","Conscious shopper":"समझदार खरीदार","Always":"हमेशा","Cotton, linen, wool, khadi":"कॉटन, लिनन, ऊन, खादी",
+"Clothing production roughly doubled between 2000 and 2015, while the number of times each piece gets worn fell by 36%. (Ellen MacArthur Foundation)":"2000 से 2015 के बीच कपड़ों का उत्पादन लगभग दोगुना हुआ, जबकि हर कपड़ा पहनने की संख्या 36% घट गई। (Ellen MacArthur Foundation)",
+"Buying secondhand skips production, the biggest slice of a garment’s footprint. EcoThread estimates that avoids about 60% of the carbon and 75% of the water.":"सेकंडहैंड खरीदने से उत्पादन बचता है, जो कपड़े के फ़ुटप्रिंट का सबसे बड़ा हिस्सा है। EcoThread के अनुमान से इससे लगभग 60% कार्बन और 75% पानी बचता है।",
+"The impact of making a garment is shared across every wear. Wear it twice as often and its footprint per outfit roughly halves.":"कपड़ा बनाने का असर हर बार पहनने में बँट जाता है। दोगुना पहनो और हर आउटफ़िट का फ़ुटप्रिंट लगभग आधा।",
+"Less than 1% of clothing material gets recycled into new clothes, so a five-minute repair beats any recycling bin. (Ellen MacArthur Foundation)":"कपड़ों के 1% से भी कम मटीरियल से नए कपड़े बनते हैं, इसलिए पाँच मिनट की मरम्मत किसी भी रीसाइक्लिंग डिब्बे से बेहतर है। (Ellen MacArthur Foundation)",
+"In the Levi’s 501 study, 37% of a pair of jeans’ lifetime carbon came from washing and drying at home.":"Levi’s 501 अध्ययन में, जींस के पूरे जीवन के कार्बन का 37% घर पर धोने-सुखाने से आया।",
+"Washing synthetic clothes is the largest single source of primary microplastics in the ocean, about 35%. (IUCN, 2017)":"सिंथेटिक कपड़े धोना समुद्र में प्राथमिक माइक्रोप्लास्टिक का सबसे बड़ा स्रोत है, लगभग 35%। (IUCN, 2017)",
+/* quiz results */
+"out of 100":"100 में से","Leading the way":"सबसे आगे","Rising changemaker":"उभरते बदलाव-कर्ता","Biggest room to grow":"बढ़ने की सबसे ज़्यादा गुंजाइश",
+"Circular style icon":"सर्कुलर स्टाइल आइकन","Mindful thrift explorer":"समझदार थ्रिफ़्ट खोजी","Trend chaser":"ट्रेंड के पीछे भागने वाले",
+"Your closet already runs on repeats, repairs and secondhand finds. Your next move is pulling friends in.":"तुम्हारी अलमारी पहले से दोहराने, मरम्मत और सेकंडहैंड पर चलती है। अगला कदम: दोस्तों को साथ लाओ।",
+"You make good choices already. A few changes to how often you buy and how you wash would cut your footprint a lot.":"तुम पहले से अच्छे फ़ैसले लेते हो। खरीदने और धोने की आदतों में थोड़े बदलाव से फ़ुटप्रिंट काफ़ी घटेगा।",
+"Micro-trends and quick hauls are adding up. Good news: you have the most to gain, in money and in impact, from small changes.":"माइक्रो-ट्रेंड और झटपट शॉपिंग जुड़ते जा रहे हैं। अच्छी खबर: छोटे बदलावों से पैसे और असर, दोनों में तुम्हें सबसे ज़्यादा फ़ायदा होगा।",
+"of fresh water a year behind those clothes":"साफ़ पानी हर साल उन कपड़ों के पीछे","Your three challenges":"तुम्हारे तीन चैलेंज","Commit now, then mark them done in My closet when you’ve actually done them.":"अभी वादा करो, फिर सच में करने पर मेरी अलमारी में पूरा मार्क करो।",
+"Commit to this":"यह वादा करो","Committed":"वादा किया",
+"Host a five-friend closet swap":"पाँच दोस्तों का क्लोज़ेट स्वैप रखो","Learn sashiko mending and fix one piece":"साशिको मरम्मत सीखो और एक कपड़ा ठीक करो","Post your best thrift rule on the pledge wall":"अपना सबसे अच्छा थ्रिफ़्ट नियम प्रण-दीवार पर लिखो",
+"No new fast fashion for 30 days":"30 दिन कोई नया फ़ास्ट फ़ैशन नहीं","Switch every load to cold wash and line dry":"हर धुलाई ठंडे पानी में और रस्सी पर सुखाओ","Swap two pieces through the hub":"हब से दो कपड़े स्वैप करो",
+"Replace your next haul with three thrifted pieces":"अगली शॉपिंग की जगह तीन थ्रिफ़्ट कपड़े लो","Try the 15-minute no-sew tee crop":"15 मिनट का बिना-सिलाई टी क्रॉप आज़माओ","Wait 72 hours before any online checkout":"किसी भी ऑनलाइन चेकआउट से पहले 72 घंटे रुको",
+"Share your score":"अपना स्कोर शेयर करो","Press and hold the card (or right-click it) to save the image for your story. Or copy a line of text.":"स्टोरी के लिए इमेज सेव करने को कार्ड दबाकर रखो (या राइट-क्लिक करो)। या एक लाइन कॉपी करो।","Copy text":"टेक्स्ट कॉपी करो","Retake the quiz":"क्विज़ फिर से दो","Copied to clipboard":"कॉपी हो गया",
+/* AI */
+"✦ AI stylist":"✦ AI स्टाइलिस्ट","Ask before you buy. Ask before you bin.":"खरीदने से पहले पूछो। फेंकने से पहले पूछो।","Two quick AI tools. Carbon and water numbers still come from EcoThread’s sourced table, not the AI.":"दो झटपट AI टूल। कार्बन और पानी के आँकड़े अब भी EcoThread की स्रोत वाली तालिका से आते हैं, AI से नहीं।",
+"Should I buy it?":"क्या मुझे यह खरीदना चाहिए?","The AI runs the 30-wear test and finds secondhand alternatives.":"AI 30-बार वाला टेस्ट करता है और सेकंडहैंड विकल्प ढूँढता है।","What are you thinking of buying?":"क्या खरीदने की सोच रहे हो?",
+"Cropped polyester cargo pants from a trend app":"ट्रेंड ऐप से क्रॉप्ड पॉलिएस्टर कार्गो पैंट","Price (₹)":"कीमत (₹)","How often would you wear it?":"कितनी बार पहनोगे?","Check it":"जाँचो",
+"Upcycle my old clothes":"मेरे पुराने कपड़े अपसाइकल करो","Snap or upload a photo of one piece and get three ideas.":"एक कपड़े की फ़ोटो लो या अपलोड करो और तीन आइडिया पाओ।","Choose or take a photo":"फ़ोटो चुनो या खींचो","Lay the garment flat. No people in the photo, please.":"कपड़ा सीधा बिछाओ। फ़ोटो में कोई व्यक्ति न हो।",
+"Anything to know? (optional)":"कुछ बताना है? (वैकल्पिक)","Stain on the front, I like oversized fits":"आगे दाग है, मुझे ढीले कपड़े पसंद हैं","Get 3 ideas":"3 आइडिया पाओ","Your garment photo":"तुम्हारे कपड़े की फ़ोटो",
+"AI can get things wrong, so use your own judgement. Photos are only sent to the AI to make suggestions; EcoThread doesn’t keep them.":"AI गलत भी हो सकता है, इसलिए अपनी समझ से काम लो। फ़ोटो सिर्फ़ सुझाव के लिए AI को भेजी जाती हैं; EcoThread उन्हें नहीं रखता।",
+"Skip it":"मत लो","Wait 48 hours":"48 घंटे रुको","Go for it":"ले लो","CO₂e if bought new":"नया लेने पर CO₂e","water if bought new":"नया लेने पर पानी","cost per wear":"प्रति-पहनावा कीमत","Why":"क्यों","Try instead":"इसकी जगह आज़माओ",
+"Checking the label, the fibre and the 30-wear test…":"लेबल, फ़ाइबर और 30-बार टेस्ट जाँच रहे हैं…","Looking at the fabric and sketching ideas…":"कपड़ा देख रहे हैं और आइडिया बना रहे हैं…",
+"First AI check done":"पहली AI जाँच पूरी","First upcycle ideas":"पहले अपसाइकल आइडिया","Describe the item in a few words.":"चीज़ के बारे में कुछ शब्दों में बताओ।","Add a photo of the garment first.":"पहले कपड़े की फ़ोटो जोड़ो।","Choose an image file.":"इमेज फ़ाइल चुनो।","Leave out links, phone numbers and emails.":"लिंक, फ़ोन नंबर और ईमेल मत डालो।",
+"AI isn’t switched on for this copy of the site yet.":"साइट की इस कॉपी पर AI अभी चालू नहीं है।","That’s a lot of questions! Wait a few minutes and try again.":"बहुत सारे सवाल! कुछ मिनट रुककर फिर कोशिश करो।","The AI couldn’t answer just now. Try again in a moment.":"AI अभी जवाब नहीं दे पाया। थोड़ी देर में फिर कोशिश करो।",
+"I can only help with clothes and sustainable style. Try describing a piece of clothing.":"मैं सिर्फ़ कपड़ों और सस्टेनेबल स्टाइल में मदद कर सकता हूँ। किसी कपड़े के बारे में बताओ।","I couldn’t spot a garment in that photo. Try laying one piece flat in good light.":"उस फ़ोटो में कपड़ा नहीं दिखा। अच्छी रोशनी में एक कपड़ा सीधा बिछाकर कोशिश करो।",
+"AI is getting ready.":"AI तैयार हो रहा है।","If this message stays, the site owner still needs to add an AI key. Everything else on EcoThread works without it.":"अगर यह संदेश बना रहे, तो साइट के मालिक को AI की चाबी जोड़नी है। EcoThread का बाकी सब इसके बिना भी चलता है।",
+"AI needs the live website.":"AI के लिए लाइव वेबसाइट चाहिए।","Open EcoThread from its web address to use these tools.":"ये टूल इस्तेमाल करने के लिए EcoThread को उसके वेब पते से खोलो।",
+/* lab */
+"Six projects you can do with scissors, a needle and a free afternoon. Tick off each step as you go.":"कैंची, सुई और एक खाली दोपहर में होने वाले छह प्रोजेक्ट। करते-करते हर कदम पर टिक लगाओ।","Filter projects":"प्रोजेक्ट छाँटो",
+"All projects":"सभी प्रोजेक्ट","No-sew":"बिना सिलाई","Visible mending":"दिखने वाली मरम्मत","Thrift smart":"समझदारी से थ्रिफ़्ट","Denim":"डेनिम","Beginner":"शुरुआती","Intermediate":"मध्यम","Anyone":"कोई भी","Done":"पूरा",
+"Oversized tee to boxy crop":"ढीली टी से बॉक्सी क्रॉप","Turn an XL thrifted tee into a structured boxy crop. No machine needed.":"XL थ्रिफ़्ट टी को बॉक्सी क्रॉप में बदलो। मशीन की ज़रूरत नहीं।",
+"Sashiko knee patch":"साशिको घुटना पैच","Reinforce a ripped knee with geometric running stitches that look better than new.":"फटे घुटने को ज्यामितीय टाँकों से मज़बूत करो, जो नए से भी अच्छे लगें।",
+"The 60-second thrift check":"60 सेकंड की थ्रिफ़्ट जाँच","Spot the gems and skip the duds at any thrift stall or Sunday market.":"किसी भी थ्रिफ़्ट स्टॉल या संडे बाज़ार में अच्छी चीज़ें पहचानो और बेकार छोड़ो।",
+"Sweatshirt to tote bag":"स्वेटशर्ट से टोट बैग","Turn a stained sweatshirt into a sturdy everyday tote with knotted fringe.":"दाग वाली स्वेटशर्ट को गाँठ वाले फ़्रिंज के साथ मज़बूत रोज़ाना बैग बनाओ।",
+"Raw-edge hem for long jeans":"लंबी जींस का रॉ-एज हेम","Tailor thrifted jeans to your exact length with a soft frayed hem.":"थ्रिफ़्ट जींस को अपनी लंबाई का बनाओ, मुलायम उधड़े किनारे के साथ।",
+"Kurta to cropped jacket":"कुर्ते से क्रॉप्ड जैकेट","Give a long cotton kurta a second life as a light open jacket.":"लंबे कॉटन कुर्ते को हल्की खुली जैकेट बनाकर दूसरी ज़िंदगी दो।",
+"You’ll need":"तुम्हें चाहिए","Steps":"कदम","Close":"बंद करो","Tick every step to finish":"पूरा करने के लिए हर कदम पर टिक करो","I made it":"मैंने बना लिया","Already done":"पहले ही पूरा",
+"Oversized cotton tee":"ढीली कॉटन टी","Sharp fabric scissors":"तेज़ कपड़े की कैंची","Ruler":"स्केल","Tailor’s chalk":"दर्ज़ी वाला चॉक","Scrap denim or old dupatta fabric":"बचा डेनिम या पुराने दुपट्टे का कपड़ा","Cotton embroidery thread":"कॉटन कढ़ाई धागा","Needle":"सुई","Safety pins":"सेफ़्टी पिन",
+"Your hands and eyes":"तुम्हारे हाथ और आँखें","Phone torch (optional)":"फ़ोन टॉर्च (वैकल्पिक)","Old sweatshirt":"पुरानी स्वेटशर्ट","Fabric scissors":"कपड़े की कैंची","A bowl to trace":"निशान लगाने को एक कटोरा","Thrifted cotton jeans":"थ्रिफ़्ट कॉटन जींस","Tweezers":"चिमटी","Chalk":"चॉक","Thrifted cotton kurta":"थ्रिफ़्ट कॉटन कुर्ता","Iron-on hem tape":"इस्त्री वाला हेम टेप","Iron":"इस्त्री",
+"Put the tee on and chalk your crop line, 4 cm below where you want it to end, because cotton jersey curls up.":"टी पहनकर क्रॉप लाइन पर चॉक लगाओ, जहाँ खत्म करनी है उससे 4 cm नीचे, क्योंकि कॉटन जर्सी मुड़ जाती है।","Lay it flat and line up both side seams.":"सीधा बिछाओ और दोनों साइड की सिलाई मिलाओ।","Rule a straight line across the front and back.":"आगे और पीछे सीधी लाइन खींचो।","Cut along the line in long, steady strokes.":"लाइन पर लंबे, स्थिर हाथ से काटो।","Tug the raw edge sideways. The jersey rolls into a clean hem.":"कटे किनारे को बगल में खींचो। जर्सी मुड़कर साफ़ किनारा बन जाती है।",
+"Cut a patch 4 cm bigger than the tear on every side.":"फटे हिस्से से हर तरफ़ 4 cm बड़ा पैच काटो।","Pin it behind the tear, on the inside of the jeans.":"इसे जींस के अंदर, फटे हिस्से के पीछे पिन करो।","Thread the needle with three strands and knot the end.":"सुई में तीन धागे डालो और सिरे पर गाँठ लगाओ।","Sew even running stitches in parallel rows across the tear and patch.":"फटे हिस्से और पैच पर समानांतर पंक्तियों में बराबर टाँके लगाओ।","Knot on the inside. That knee is good for years.":"अंदर गाँठ लगाओ। यह घुटना सालों चलेगा।",
+"Find the fibre label on the side seam. Look for cotton, linen, wool, khadi or heavy denim.":"साइड सिलाई पर फ़ाइबर लेबल ढूँढो। कॉटन, लिनन, ऊन, खादी या मोटा डेनिम देखो।","Hold knits up to the light. Thin patches mean it won’t last.":"बुने कपड़े रोशनी की ओर करके देखो। पतले हिस्से हों तो टिकेगा नहीं।","Gently pull the side seams and run every zip top to bottom.":"साइड की सिलाई हल्के से खींचो और हर ज़िप ऊपर से नीचे चलाकर देखो।","Check underarms and collars for stains and pilling before you pay.":"पैसे देने से पहले बगल और कॉलर पर दाग और रोएँ देखो।",
+"Cut off both sleeves just inside the seams.":"दोनों आस्तीनें सिलाई के ठीक अंदर से काटो।","Trace a bowl at the neckline and cut a wide scoop for the handles.":"गले पर कटोरे से निशान लगाओ और हैंडल के लिए चौड़ा गोल काटो।","Turn it inside out and cut 8 cm fringe strips along the hem.":"उल्टा करके नीचे के किनारे पर 8 cm की पट्टियाँ काटो।","Tie each front strip to its back strip with a double knot.":"आगे की हर पट्टी को पीछे वाली से दोहरी गाँठ से बाँधो।","Turn it right side out. Done.":"सीधा करो। हो गया।",
+"Try them on with your usual shoes and mark the length.":"अपने रोज़ के जूतों के साथ पहनकर लंबाई पर निशान लगाओ।","Lay them flat, match the seams and cut straight across both legs.":"सीधा बिछाओ, सिलाई मिलाओ और दोनों पैरों को सीधा काटो।","Use tweezers to pull out 3–4 horizontal threads for a fringe.":"फ़्रिंज के लिए चिमटी से 3–4 आड़े धागे निकालो।","Wash cold to set the frayed texture.":"उधड़ी बनावट पक्की करने के लिए ठंडे पानी में धोओ।",
+"Cut the front open along the centre, from the neck slit down.":"आगे के बीच से, गले के कट से नीचे तक खोलकर काटो।","Mark a hip-length line and cut across the body.":"कूल्हे तक की लंबाई पर निशान लगाकर आर-पार काटो।","Fold the raw edges 2 cm inward and slip hem tape inside.":"कटे किनारों को 2 cm अंदर मोड़ो और अंदर हेम टेप रखो।","Press with a warm iron through a damp cloth for a crisp, no-sew finish.":"गीले कपड़े के ऊपर से गर्म इस्त्री करो, बिना सिलाई के साफ़ फ़िनिश के लिए।",
+"Decode the fabric tag":"कपड़े का टैग समझो","Flip any garment inside out and check the label before you buy. Pick a fibre to see how it compares.":"खरीदने से पहले कपड़ा उल्टा करके लेबल देखो। फ़ाइबर चुनकर तुलना देखो।","Pick a fibre":"फ़ाइबर चुनो",
+"Organic cotton":"ऑर्गेनिक कॉटन","Linen, hemp & khadi":"लिनन, हेम्प और खादी","Recycled polyester (rPET)":"रीसाइकल्ड पॉलिएस्टर (rPET)","Viscose, rayon & modal":"विस्कोस, रेयॉन और मोडल","Virgin polyester, acrylic & nylon":"नया पॉलिएस्टर, एक्रेलिक और नायलॉन",
+"Water and land":"पानी और ज़मीन","Plastic-free":"प्लास्टिक-मुक्त","How long it lasts":"कितना टिकता है",
+"Breathable, biodegradable, no synthetic pesticides.":"हवादार, गलने वाला, सिंथेटिक कीटनाशक नहीं।","Low-water crops that get softer every wash.":"कम पानी वाली फ़सलें जो हर धुलाई में और मुलायम होती हैं।","Better than new polyester, still plastic.":"नए पॉलिएस्टर से बेहतर, फिर भी प्लास्टिक।","Plant-based, but check how it was made.":"पौधों से बना, पर देखो कैसे बना।","Fossil-fuel plastic that sheds every wash.":"जीवाश्म ईंधन वाला प्लास्टिक जो हर धुलाई में झड़ता है।",
+"Uses far less irrigation water than conventional cotton: up to 91% less, according to Textile Exchange.":"सामान्य कॉटन से बहुत कम सिंचाई पानी: Textile Exchange के अनुसार 91% तक कम।","Sheds no plastic. Composts at the end of its life.":"कोई प्लास्टिक नहीं झड़ता। आखिर में खाद बन जाता है।","Wash cold, inside out, and line dry to avoid shrinking.":"सिकुड़ने से बचाने के लिए ठंडे पानी में, उल्टा करके धोओ और रस्सी पर सुखाओ।",
+"Flax and hemp grow mostly on rainwater. Hand-spun khadi uses very little energy.":"अलसी और हेम्प ज़्यादातर बारिश के पानी से उगते हैं। हाथ से कती खादी में बहुत कम ऊर्जा लगती है।","No plastic. Naturally strong and long-lasting.":"कोई प्लास्टिक नहीं। कुदरती तौर पर मज़बूत और टिकाऊ।","Wash gently and hang while slightly damp.":"हल्के से धोओ और थोड़ा गीला रहते टाँग दो।",
+"Made from used bottles and needs much less energy than virgin polyester.":"इस्तेमाल हुई बोतलों से बनता है और नए पॉलिएस्टर से बहुत कम ऊर्जा लेता है।","Still sheds microfibres when washed. Best for jackets and bags that rarely get washed.":"धोने पर फिर भी माइक्रोफ़ाइबर झड़ते हैं। कम धुलने वाली जैकेट और बैग के लिए सबसे अच्छा।","Wash rarely, cold, in a microfibre-catching bag.":"कम धोओ, ठंडे पानी में, माइक्रोफ़ाइबर रोकने वाले थैले में।",
+"Made from wood pulp. Conventional viscose uses harsh chemicals; look for Lyocell or FSC-certified pulp.":"लकड़ी की लुगदी से बनता है। सामान्य विस्कोस में तेज़ रसायन लगते हैं; Lyocell या FSC-प्रमाणित लुगदी देखो।","No plastic, but weak when wet.":"प्लास्टिक नहीं, पर गीला होने पर कमज़ोर।","Cold, gentle wash and dry flat.":"ठंडे पानी में हल्के से धोओ और सीधा बिछाकर सुखाओ।",
+"Plastic fibres use hundreds of millions of barrels of oil a year (Ellen MacArthur Foundation).":"प्लास्टिक फ़ाइबर हर साल करोड़ों बैरल तेल खाते हैं (Ellen MacArthur Foundation)।","One wash load of acrylic can release over 700,000 fibres (Napper & Thompson, 2016).":"एक्रेलिक की एक धुलाई से 7 लाख से ज़्यादा फ़ाइबर निकल सकते हैं (Napper & Thompson, 2016)।","If you want it, buy it secondhand, wash cold and only when needed.":"चाहिए तो सेकंडहैंड लो, ठंडे पानी में और ज़रूरत पर ही धोओ।",
+"Scores are EcoThread’s simple comparison, not a certification.":"स्कोर EcoThread की सरल तुलना है, कोई प्रमाणपत्र नहीं।","Grade A":"ग्रेड A","Grade B":"ग्रेड B","Grade C":"ग्रेड C","Grade E":"ग्रेड E",
+"Care that makes clothes last":"देखभाल जिससे कपड़े टिकें","How you wash matters almost as much as what you buy. In the Levi’s life-cycle study, washing and drying at home made up this share of a pair of jeans’ lifetime carbon:":"कैसे धोते हो, यह लगभग उतना ही ज़रूरी है जितना क्या खरीदते हो। Levi’s के अध्ययन में, जींस के पूरे जीवन के कार्बन का इतना हिस्सा घर पर धोने-सुखाने से आया:",
+"Wash cold, full loads":"ठंडा पानी, पूरी मशीन","Most of a wash’s energy goes into heating water. Cold water is also gentler on dyes and elastic.":"धुलाई की ज़्यादातर ऊर्जा पानी गर्म करने में जाती है। ठंडा पानी रंग और इलास्टिक पर भी नरम है।",
+"Line dry":"रस्सी पर सुखाओ","Skip the dryer. Air drying uses no energy and the heat and tumbling are what wear fibres out.":"ड्रायर छोड़ो। हवा में सुखाने में बिजली नहीं लगती, और गर्मी व घुमाव ही फ़ाइबर घिसते हैं।",
+"Wash less":"कम धोओ","Air out jeans and jumpers between wears and spot-clean marks. Fewer washes means fewer microfibres too.":"जींस और स्वेटर को पहनने के बीच हवा लगाओ और दाग वहीं साफ़ करो। कम धुलाई मतलब कम माइक्रोफ़ाइबर।",
+"Fix it early":"जल्दी ठीक करो","Re-sew a loose button or a small split the day you spot it. Tiny repairs stop big ones.":"ढीला बटन या छोटी उधड़न उसी दिन सिल दो। छोटी मरम्मत बड़ी से बचाती है।",
+/* swap */
+"List something to swap":"स्वैप के लिए कुछ लिस्ट करो","Live board.":"लाइव बोर्ड।","Demo mode.":"डेमो मोड।","View only.":"सिर्फ़ देखने के लिए।",
+"Everyone using EcoThread sees the listings and pledges posted here. Example items are marked so you can tell them apart.":"EcoThread इस्तेमाल करने वाला हर कोई यहाँ पोस्ट हुई लिस्टिंग और प्रण देखता है। उदाहरण वाली चीज़ें अलग से मार्क हैं।",
+"Listings and pledges you post here are visible to everyone this page is shared with. Example items are marked so you can tell them apart.":"यहाँ पोस्ट की गई लिस्टिंग और प्रण उन सबको दिखते हैं जिनके साथ यह पेज शेयर है। उदाहरण वाली चीज़ें अलग से मार्क हैं।",
+"What you post is saved on this device only. Items marked “Example” show how the board works.":"जो पोस्ट करोगे वह सिर्फ़ इसी डिवाइस पर सेव होगा। “उदाहरण” वाली चीज़ें दिखाती हैं कि बोर्ड कैसे काम करता है।",
+"Board snapshot":"बोर्ड की झलक","Real counts from this board. Examples not included.":"इस बोर्ड की असली गिनती। उदाहरण शामिल नहीं।","pieces listed":"कपड़े लिस्ट हुए",
+"Filter by category":"श्रेणी से छाँटो","All":"सभी","Tops":"टॉप","Bottoms":"बॉटम","Outerwear":"जैकेट वगैरह","Ethnic wear":"एथनिक","Accessories":"एक्सेसरीज़",
+"Search the rack":"रैक में खोजो","Search kurta, denim, @handle":"कुर्ता, डेनिम, @handle खोजो","Any size":"कोई भी साइज़","One size":"फ़्री साइज़",
+"Example":"उदाहरण","Like new":"नए जैसा","Gently loved":"हल्का इस्तेमाल","Well worn":"काफ़ी पहना","Upcycled":"अपसाइकल किया",
+"Try a request":"रिक्वेस्ट आज़माओ","Request swap":"स्वैप माँगो","Request sent":"रिक्वेस्ट भेजी","Mark as swapped":"स्वैप हो गया","Remove":"हटाओ","Hide":"छिपाओ","Swapped":"स्वैप हो गया","Requests":"रिक्वेस्ट",
+"Nothing matches yet.":"अभी कुछ मेल नहीं खाता।","Clear the search, or list a piece of your own.":"खोज हटाओ, या अपना कोई कपड़ा लिस्ट करो।",
+"Swap meet-ups":"स्वैप मिलन","Weekend closet swap & mend jam":"वीकेंड क्लोज़ेट स्वैप और मरम्मत जैम","Saturday, 1–4 pm":"शनिवार, दोपहर 1–4","School quad. Bring 2–5 clean pieces.":"स्कूल का आँगन। 2–5 साफ़ कपड़े लाओ।","Sashiko patching pop-up":"साशिको पैचिंग पॉप-अप","Sunday, 11 am–2 pm":"रविवार, सुबह 11–दोपहर 2","Art room. Needles and thread provided.":"आर्ट रूम। सुई-धागा मिलेगा।","Nov":"नवं","Dec":"दिसं",
+"I’ll be there":"मैं आऊँगा/आऊँगी","You’re going":"तुम जा रहे हो","See you there":"वहीं मिलते हैं","RSVP cancelled":"RSVP रद्द",
+"Swap at school or at an organised meet-up, in daylight, with friends. Never post your phone number or address here.":"स्वैप स्कूल में या तय मिलन पर, दिन में, दोस्तों के साथ करो। यहाँ कभी अपना फ़ोन नंबर या पता मत डालो।",
+"Pledge wall":"प्रण-दीवार","One promise you’ll actually keep this term.":"एक वादा जो तुम इस टर्म सच में निभाओगे।","Your handle":"तुम्हारा हैंडल","Your pledge":"तुम्हारा प्रण","I’ll repeat outfits proudly and…":"मैं गर्व से कपड़े दोहराऊँगा/दोहराऊँगी और…","Post pledge":"प्रण पोस्ट करो","Pledge posted":"प्रण पोस्ट हुआ",
+"Add your handle and a pledge of at least a few words.":"अपना हैंडल और कुछ शब्दों का प्रण लिखो।","Keep contact details and links off the wall.":"दीवार पर संपर्क जानकारी और लिंक मत डालो।",
+"Host a school swap":"स्कूल स्वैप रखो","A five-step plan for your eco-club. Tick steps off as your team gets them done.":"तुम्हारे इको-क्लब के लिए पाँच कदम की योजना। टीम जैसे-जैसे पूरा करे, टिक लगाओ।",
+"Get the go-ahead":"इजाज़त लो","Ask your eco-club teacher or principal for a date and a room. Pitch it as a zero-cost, zero-waste event.":"इको-क्लब टीचर या प्रिंसिपल से तारीख और कमरा माँगो। इसे बिना खर्च, बिना कचरे वाला इवेंट बताओ।",
+"Set the swap rule":"स्वैप का नियम तय करो","“Bring up to five clean pieces, take up to five.” Hand out one token for every piece dropped off.":"“पाँच तक साफ़ कपड़े लाओ, पाँच तक ले जाओ।” हर जमा कपड़े पर एक टोकन दो।",
+"Collect and sort":"इकट्ठा करो और छाँटो","Sort by type and size on tables or rails. Turn away stained or broken items, or send them to the mending table.":"मेज़ या रैक पर किस्म और साइज़ से छाँटो। दाग वाले या टूटे कपड़े लौटा दो, या मरम्मत की मेज़ पर भेजो।",
+"Add a mending table":"मरम्मत की मेज़ लगाओ","A few needles, thread and one volunteer who knows the sashiko patch from Mend & make.":"कुछ सुइयाँ, धागा और एक वॉलंटियर जो ‘सिलो और बनाओ’ वाला साशिको पैच जानता हो।",
+"Plan for leftovers":"बचे कपड़ों की योजना","Give what’s left to a local charity or the art room for scraps. Log completed swaps here so the impact counts.":"बचा हुआ किसी स्थानीय संस्था या आर्ट रूम को दे दो। पूरे स्वैप यहाँ दर्ज करो ताकि असर गिना जाए।",
+"Swap plan complete":"स्वैप योजना पूरी",
+"Sign the slow-fashion manifesto":"स्लो-फ़ैशन घोषणापत्र पर साइन करो","I’ll aim to wear every piece at least 30 times.":"मैं हर कपड़ा कम से कम 30 बार पहनने की कोशिश करूँगा/करूँगी।","I’ll swap, thrift or mend before I buy new.":"नया खरीदने से पहले मैं स्वैप, थ्रिफ़्ट या मरम्मत करूँगा/करूँगी।","I’ll skip ultra-fast, throwaway micro-trends.":"मैं बहुत तेज़, फेंकने वाले माइक्रो-ट्रेंड छोड़ूँगा/छोड़ूँगी।",
+"First name or nickname":"पहला नाम या निकनेम","Class or club (optional)":"क्लास या क्लब (वैकल्पिक)","Create my certificate":"मेरा सर्टिफ़िकेट बनाओ","Made on your device and never uploaded. Press and hold (or right-click) the certificate to save it.":"तुम्हारे डिवाइस पर बनता है, कभी अपलोड नहीं होता। सेव करने के लिए सर्टिफ़िकेट दबाकर रखो (या राइट-क्लिक करो)।",
+"Manifesto signed":"घोषणापत्र पर साइन हुआ","Certificate updated":"सर्टिफ़िकेट अपडेट हुआ","Add your first name or a nickname.":"अपना पहला नाम या निकनेम लिखो।","Leave out phone numbers, emails and links.":"फ़ोन नंबर, ईमेल और लिंक मत डालो।",
+"List a piece to swap":"स्वैप के लिए कपड़ा लिस्ट करो","Title":"शीर्षक","Category":"श्रेणी","Size":"साइज़","Condition":"हालत","Looks like":"दिखता है","Description":"विवरण","Cancel":"रद्द करो","Post listing":"लिस्टिंग पोस्ट करो",
+"Oversized vintage crewneck":"ढीली विंटेज स्वेटशर्ट","100% cotton, boxy fit, no flaws. Looking for denim.":"100% कॉटन, बॉक्सी फ़िट, कोई कमी नहीं। डेनिम चाहिए।",
+"No phone numbers, emails or addresses. Arrange the swap in person at school.":"फ़ोन नंबर, ईमेल या पता नहीं। स्वैप स्कूल में आमने-सामने तय करो।",
+"T-shirt":"टी-शर्ट","Sweater / cardigan":"स्वेटर / कार्डिगन","Jeans / trousers":"जींस / पैंट","Jacket":"जैकेट","Kurta":"कुर्ता","Skirt":"स्कर्ट","Bag":"बैग",
+"Add a title, a description and your handle.":"शीर्षक, विवरण और अपना हैंडल जोड़ो।","Take out phone numbers, emails and links. Arrange the swap in person at school.":"फ़ोन नंबर, ईमेल और लिंक हटाओ। स्वैप स्कूल में आमने-सामने तय करो।",
+"Listed on the live board":"लाइव बोर्ड पर लिस्ट हुआ","Listed on this device":"इस डिवाइस पर लिस्ट हुआ","Listing removed":"लिस्टिंग हटाई गई",
+"Request a swap":"स्वैप माँगो","What you’ll offer":"तुम बदले में क्या दोगे","Striped rugby polo, M":"धारीदार रग्बी पोलो, M","Where to meet":"कहाँ मिलना है","School library, after classes":"स्कूल लाइब्रेरी, क्लास के बाद","Next swap meet-up":"अगला स्वैप मिलन","Main gate, with friends":"मेन गेट, दोस्तों के साथ","Send request":"रिक्वेस्ट भेजो",
+"Add your handle and what you’ll offer.":"अपना हैंडल और बदले में क्या दोगे, लिखो।","No phone numbers, emails or links, please.":"कृपया फ़ोन नंबर, ईमेल या लिंक नहीं।","That’s how a request works. Try one on a real listing":"रिक्वेस्ट ऐसे काम करती है। किसी असली लिस्टिंग पर आज़माओ",
+"The live board rejected that post. Check it has no contact details.":"लाइव बोर्ड ने वह पोस्ट नहीं ली। देखो उसमें संपर्क जानकारी तो नहीं।",
+/* closet */
+"Log what you own and tap “+1” each time you wear it. Cost per wear drops with every outfit repeat. Saved in this browser only.":"जो है उसे लिखो और हर बार पहनने पर “+1” दबाओ। हर दोहराव पर प्रति-पहनावा कीमत घटती है। सिर्फ़ इसी ब्राउज़र में सेव।",
+"Your impact":"तुम्हारा असर","CO₂ avoided":"बचाई CO₂","by pieces you got secondhand or swapped.":"सेकंडहैंड या स्वैप से मिले कपड़ों से।","Water avoided":"बचा पानी","the same way.":"इसी तरह।","Challenges":"चैलेंज","you’ve committed to. Pledges count once you log the result.":"जिनका तुमने वादा किया। नतीजा दर्ज करने पर ही गिने जाते हैं।","Eco-points":"इको-पॉइंट","for learning, listing and taking part.":"सीखने, लिस्ट करने और हिस्सा लेने के लिए।",
+"Add a piece":"कपड़ा जोड़ो","What is it?":"यह क्या है?","Blue block-print kurta":"नीला ब्लॉक-प्रिंट कुर्ता","Type":"किस्म","How you got it":"कैसे मिला","Bought new":"नया खरीदा","Thrifted":"थ्रिफ़्ट किया","Swapped":"स्वैप किया","Hand-me-down":"उतरन","Price paid (₹)":"दी गई कीमत (₹)","Times worn so far":"अब तक कितनी बार पहना","Add to my closet":"मेरी अलमारी में जोड़ो",
+"Sweater":"स्वेटर","Something else":"कुछ और","Give the piece a name.":"कपड़े को नाम दो।","Added to your closet":"अलमारी में जुड़ गया","Secondhand piece logged":"सेकंडहैंड कपड़ा दर्ज","Outfit repeat logged":"दोहराया आउटफ़िट दर्ज",
+"Wardrobe":"वॉर्डरोब","Your closet is empty.":"तुम्हारी अलमारी खाली है।","Add the piece you wear most. Watch its cost per wear fall each time you tap +1.":"सबसे ज़्यादा पहना जाने वाला कपड़ा जोड़ो। हर +1 पर उसकी प्रति-पहनावा कीमत घटती देखो।",
+"per wear":"प्रति पहनावा","free":"मुफ़्त","Your challenges":"तुम्हारे चैलेंज","Reset my data":"मेरा डेटा रीसेट करो","Reset everything?":"सब रीसेट करें?","This clears your closet, points and commitments from this browser. It can’t be undone.":"इससे इस ब्राउज़र से तुम्हारी अलमारी, पॉइंट और वादे मिट जाएँगे। वापस नहीं होगा।","Keep my data":"मेरा डेटा रखो","Reset":"रीसेट","Your data was reset":"तुम्हारा डेटा रीसेट हुआ",
+/* sources (headings only; citations stay in English) */
+"Sources & method":"स्रोत और तरीका","Every number on EcoThread comes from one of these sources or from an assumption listed below. Where studies disagree, we show the range.":"EcoThread का हर आँकड़ा इन्हीं स्रोतों या नीचे लिखी मान्यताओं से है। जहाँ अध्ययन अलग हैं, वहाँ हम रेंज दिखाते हैं। (स्रोत अंग्रेज़ी में हैं।)",
+"Garment numbers we use":"हमारे इस्तेमाल किए कपड़ों के आँकड़े","Assumptions":"मान्यताएँ","Garment":"कपड़ा","New price":"नई कीमत","Thrift price":"थ्रिफ़्ट कीमत","Basis":"आधार","Water (L)":"पानी (L)","CO₂e (kg, lifetime)":"CO₂e (kg, पूरा जीवन)",
+"90s carpenter jeans":"90 के दशक की कारपेंटर जींस","Heavy cotton, faded wash, loads of pockets. Looking for a jacket.":"मोटा कॉटन, फीका रंग, ढेर सारी जेबें। जैकेट चाहिए।",
+"Hand-block-print kurta":"हाथ के ब्लॉक-प्रिंट वाला कुर्ता","Jaipur cotton, indigo print. Wore it once to a wedding.":"जयपुरी कॉटन, नील प्रिंट। एक शादी में एक बार पहना।",
+"Patchwork denim jacket":"पैचवर्क डेनिम जैकेट","Pieced from three thrifted jackets. One of a kind.":"तीन थ्रिफ़्ट जैकेटों से जोड़कर बनी। अपनी तरह की अकेली।",
+"Single-stitch graphic tee":"सिंगल-स्टिच ग्राफ़िक टी","Heavy cotton, boxy fit, no holes.":"मोटा कॉटन, बॉक्सी फ़िट, कोई छेद नहीं।",
+"Canvas crossbody bag":"कैनवस क्रॉसबॉडी बैग","Fits a laptop and a water bottle. Brass buckles.":"लैपटॉप और पानी की बोतल आ जाती है। पीतल के बकल।",
+"Chunky cotton cardigan":"मोटा कॉटन कार्डिगन","Wooden buttons, very warm. Open to any tee.":"लकड़ी के बटन, बहुत गर्म। बदले में कोई भी टी चलेगी।",
+"No fast-fashion orders for the rest of the school year. Thrift, swap and mend only.":"बाकी स्कूल साल में कोई फ़ास्ट-फ़ैशन ऑर्डर नहीं। सिर्फ़ थ्रिफ़्ट, स्वैप और मरम्मत।",
+"Ran a six-person swap at home and came away with four ‘new’ hoodies for ₹0.":"घर पर छह लोगों का स्वैप किया और ₹0 में चार ‘नई’ हुडी मिल गईं।",
+"All my laundry is cold wash and line dry now. Also learnt to hem my own jeans.":"अब मेरी सारी धुलाई ठंडे पानी में और रस्सी पर सुखाकर होती है। अपनी जींस का हेम करना भी सीख लिया।",
+"Saturday, 1–4 pm · School quad. Bring 2–5 clean pieces.":"शनिवार, दोपहर 1–4 · स्कूल का आँगन। 2–5 साफ़ कपड़े लाओ।",
+"Sunday, 11 am–2 pm · Art room. Needles and thread provided.":"रविवार, सुबह 11–दोपहर 2 · आर्ट रूम। सुई-धागा मिलेगा।",
+/* toasts + misc */
+"Closet quiz finished":"क्लोज़ेट क्विज़ पूरा","My closet footprint score":"मेरी अलमारी का फ़ुटप्रिंट स्कोर","I’m cutting my clothing footprint by swapping, mending and thrifting.":"मैं स्वैप, मरम्मत और थ्रिफ़्ट से अपने कपड़ों का फ़ुटप्रिंट घटा रहा/रही हूँ।",
+"Certificate of Circular Style":"सर्कुलर स्टाइल प्रमाणपत्र","This certifies that":"प्रमाणित किया जाता है कि","promising to wear more, waste less and swap before shopping.":"और वादा किया है: ज़्यादा पहनना, कम बर्बाद करना और खरीदने से पहले स्वैप करना।","30 wears per piece":"हर कपड़ा 30 बार","Swap, thrift or mend first":"पहले स्वैप, थ्रिफ़्ट या मरम्मत","No throwaway micro-trends":"फेंकने वाले ट्रेंड नहीं","Self-signed pledge":"स्वयं हस्ताक्षरित प्रण","Now in English":"Now in English","EcoThread installed":"EcoThread इंस्टॉल हुआ","Still connecting to the live board…":"लाइव बोर्ड से जुड़ रहे हैं…"
+};
+const HI_GARMENT = {"Cotton tee":"कॉटन टी","Jeans":"जींस","Hoodie":"हुडी","Denim jacket":"डेनिम जैकेट","Cotton kurta":"कॉटन कुर्ता"};
+const hiOr = s => HI[s] || s;
+const HI_RX = [
+  [/^Question (\d+) of (\d+)$/, (m,a,b)=>"सवाल "+a+" / "+b],
+  [/^(\d+)% done$/, (m,a)=>a+"% पूरा"],
+  [/^(\d+) of (\d+) steps done(\. Your swap is ready to go!)?$/, (m,a,b,c)=>b+" में से "+a+" कदम पूरे"+(c?"। तुम्हारा स्वैप तैयार है!":"")],
+  [/^Step (\d+)$/, (m,a)=>"कदम "+a],
+  [/^Step (\d+) done$/, (m,a)=>"कदम "+a+" पूरा"],
+  [/^Myth (\d+)$/, (m,a)=>"मिथक "+a],
+  [/^Size (.+)$/, (m,a)=>"साइज़ "+hiOr(a)],
+  [/^([\d.,]+) kg CO₂e over its life$/, (m,a)=>"पूरे जीवन में "+a+" kg CO₂e"],
+  [/^([\d,]+) litres$/, (m,a)=>a+" लीटर"],
+  [/^(₹[\d,]+) on the tag$/, (m,a)=>"टैग पर "+a],
+  [/^(₹[\d,]+) thrifted, ₹0 swapped$/, (m,a)=>"थ्रिफ़्ट में "+a+", स्वैप में ₹0"],
+  [/^(₹[\d,]+) if worn (\d+) times$/, (m,a,b)=>b+" बार पहनने पर "+a],
+  [/^(.+) less than all-new$/, (m,a)=>"सब-नया से "+a+" कम"],
+  [/^(\d+) going · example event$/, (m,a)=>a+" आ रहे हैं · उदाहरण इवेंट"],
+  [/^CO₂e a year from the roughly (\d+) pieces you buy$/, (m,a)=>"हर साल खरीदे लगभग "+a+" कपड़ों से CO₂e"],
+  [/^you could keep each year by buying half as much, mostly secondhand\. That also avoids (.+) CO₂e\.$/, (m,a)=>"हर साल बचा सकते हो, आधा खरीदकर और ज़्यादातर सेकंडहैंड लेकर। इससे "+a+" CO₂e भी बचेगा।"],
+  [/^Your closet sits (\d+)% of the way from the lightest to the heaviest possible answers$/, (m,a)=>"तुम्हारी अलमारी सबसे हल्के से सबसे भारी के बीच "+a+"% पर है"],
+  [/^(Support this pledge|Remove support), (\d+) so far$/, (m,a,b)=>(a==="Remove support"?"समर्थन हटाओ":"इस प्रण का समर्थन करो")+", अब तक "+b],
+  [/^(.+): (bought new|secondhand)\. Tap to switch\.$/, (m,a,b)=>hiOr(a)+": "+(b==="secondhand"?"सेकंडहैंड":"नया खरीदा")+"। बदलने के लिए टैप करो।"],
+  [/^· (\d+) min · (.+)$/, (m,a,b)=>"· "+a+" मिनट · "+hiOr(b)],
+  [/^(\d+) pieces? · (\d+)% secondhand$/, (m,a,b)=>a+" कपड़े · "+b+"% सेकंडहैंड"],
+  [/^(Bought new|Thrifted|Swapped|Hand-me-down) · (free|₹[\d,]+) · worn (\d+) times?$/, (m,a,b,c)=>hiOr(a)+" · "+(b==="free"?"मुफ़्त":b)+" · "+c+" बार पहना"],
+  [/^(Challenge added|Committed|Finished|Challenge done): (.+)$/, (m,a,b)=>({"Challenge added":"चैलेंज जुड़ा","Committed":"वादा किया","Finished":"पूरा किया","Challenge done":"चैलेंज पूरा"})[a]+": "+hiOr(b)],
+  [/^Swap request sent to (.+)$/, (m,a)=>a+" को स्वैप रिक्वेस्ट भेजी"],
+  [/^Swap logged\. That’s (.+) CO₂e avoided$/, (m,a)=>"स्वैप दर्ज। "+a+" CO₂e बचा"],
+  [/^Open the “(.+)” guide$/, (m,a)=>"“"+hiOr(a)+"” गाइड खोलो"],
+  [/^Impact from EcoThread’s table for a typical (.+)\. Buying secondhand avoids about (.+) and (.+)\.$/, (m,a,b,c)=>"आम "+a+" के लिए EcoThread की तालिका से असर। सेकंडहैंड लेने से लगभग "+b+" और "+c+" बचता है।"],
+  [/^Fibre: (.+)$/, (m,a)=>"फ़ाइबर: "+a],
+  [/^(.+) · (.+) \(example listing, nothing is sent\)$/, (m,a,b)=>a+" · "+b+" (उदाहरण लिस्टिंग, कुछ नहीं भेजा जाएगा)"],
+  [/^(.+) offers (.+) · (.+)$/, (m,a,b,c)=>a+" बदले में "+b+" · "+hiOr(c)],
+  [/^Wore (.+) again$/, (m,a)=>a+" फिर पहना"],[/^One fewer wear for (.+)$/, (m,a)=>a+" का एक पहनावा कम"],[/^Remove (.+)$/, (m,a)=>a+" हटाओ"],
+  [/^(\d+) requests?$/, (m,a)=>a+" रिक्वेस्ट"],
+  [/^(.+) · example$/, (m,a)=>a+" · उदाहरण"]
+];
+function trHI(s){
+  const k = s.replace(/\s+/g," ").trim(); if(!k) return null;
+  if(HI[k]) return HI[k];
+  for(const [re,f] of HI_RX){ const m = k.match(re); if(m) return f(...m); }
+  return null;
+}
+const T = s => S.lang==="hi" ? (trHI(s) || s) : s;
+const ORIG_TXT = new WeakMap();
+let langObs = null, langBusy = false;
+function applyLang(root){
+  langBusy = true;
+  const hi = S.lang === "hi";
+  const w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT);
+  while(w.nextNode()){
+    const n = w.currentNode, p = n.parentElement; if(!p || /^(SCRIPT|STYLE|TEXTAREA)$/.test(p.tagName) || p.closest("[data-no-tr]")) continue;
+    if(!ORIG_TXT.has(n)) ORIG_TXT.set(n, n.nodeValue);
+    const orig = ORIG_TXT.get(n);
+    if(hi){ const t = trHI(orig); if(t){ const lead = orig.match(/^\s*/)[0], trail = orig.match(/\s*$/)[0]; const v = lead+t+trail; if(n.nodeValue !== v) n.nodeValue = v; } else if(n.nodeValue !== orig) n.nodeValue = orig; }
+    else if(n.nodeValue !== orig) n.nodeValue = orig;
+  }
+  $$("[placeholder],[aria-label],[alt]", root || document).forEach(el=>{
+    ["placeholder","aria-label","alt"].forEach(a=>{ if(!el.hasAttribute(a)) return; const key = "data-en-"+a; if(!el.hasAttribute(key)) el.setAttribute(key, el.getAttribute(a));
+      const orig = el.getAttribute(key), v = hi ? (trHI(orig) || orig) : orig; if(el.getAttribute(a) !== v) el.setAttribute(a, v); });
+  });
+  langBusy = false;
+}
+function setLang(l){
+  S.lang = l; save();
+  document.documentElement.lang = l;
+  $("#lang-btn").setAttribute("data-en-aria-label", l==="hi" ? "Switch language to English" : "Switch language to Hindi");
+  $("#lang-btn").setAttribute("aria-label", l==="hi" ? "भाषा अंग्रेज़ी में बदलें" : "Switch language to Hindi");
+  applyLang();
+  sizeStitch && sizeStitch();
+}
+$("#lang-btn").addEventListener("click", ()=>{ setLang(S.lang==="hi" ? "en" : "hi"); toast(S.lang==="hi" ? "अब हिंदी में" : "Now in English"); });
+function startLangObserver(){
+  if(langObs) return;
+  let queued = false;
+  langObs = new MutationObserver(()=>{ if(langBusy || S.lang!=="hi" || queued) return; queued = true; requestAnimationFrame(()=>{ queued = false; applyLang(); }); });
+  langObs.observe(document.body, {childList:true, subtree:true});
+}
+document.documentElement.lang = S.lang || "en";
+startLangObserver();
+if(S.lang === "hi") applyLang();
 </script>
 </body>
 </html>
