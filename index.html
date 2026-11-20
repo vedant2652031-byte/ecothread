@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EcoThread — Teen Action & Sustainable Style</title>
 <meta name="description" content="EcoThread helps teens see the hidden cost of fast fashion and swap, mend and thrift instead. SDG 12: Responsible Consumption and Production.">
+<meta name="theme-color" content="#154212">
+<meta property="og:title" content="EcoThread — Your outfit shouldn’t cost the planet">
+<meta property="og:description" content="See the hidden cost of fast fashion, take the closet quiz, and swap, mend and thrift instead. A youth project for UN SDG 12.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%23E8A317' stroke='%23154212' stroke-width='3'/%3E%3Cpath d='M8 20h24M20 8v24' stroke='%23154212' stroke-width='3' stroke-dasharray='4 3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -395,6 +400,106 @@ dialog::backdrop{background:rgba(21,46,18,.6);backdrop-filter:blur(3px)}
 .manifesto li{display:flex;gap:10px;font-size:15px}
 .manifesto li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--leaf-soft);color:var(--leaf);display:grid;place-items:center;font-weight:900;font-size:13px}
 
+
+/* ================= v3 visual polish ================= */
+::selection{background:var(--marigold);color:var(--indigo)}
+html{scrollbar-color:var(--indigo-2) var(--chambray)}
+.btn{transition:transform .18s cubic-bezier(.3,.7,.2,1),box-shadow .18s,background .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px -10px rgba(21,66,18,.55)}
+.btn:active{transform:translateY(0)}
+.top{backdrop-filter:saturate(1.2)}
+/* hero */
+.hero-card{min-height:600px;isolation:isolate}
+.hero-card::after{display:none}
+.stitch-draw{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:visible}
+.sd-dash{fill:none;stroke:rgba(255,255,255,.5);stroke-width:2.2;stroke-dasharray:9 7}
+.sd-mask{fill:none;stroke:#fff;stroke-width:8;stroke-dasharray:1000;stroke-dashoffset:1000;animation:sew 2.4s cubic-bezier(.5,.1,.3,1) .15s forwards}
+@keyframes sew{to{stroke-dashoffset:0}}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:rgba(255,255,255,.85);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:999px;margin-bottom:22px}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--marigold);box-shadow:0 0 0 4px rgba(232,163,23,.25);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(232,163,23,0)}}
+.hero h1{font-size:clamp(48px,7.6vw,104px);letter-spacing:-.02em}
+.hero h1 .h1a,.hero h1 .h1b{display:inline-block;opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .h1b{animation-delay:.12s}
+.hero h1 .stretch{opacity:0;transform:scaleX(.6);transform-origin:left;animation:stretchIn .9s cubic-bezier(.2,.9,.2,1) .35s forwards;text-shadow:0 6px 0 rgba(0,0,0,.18)}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes stretchIn{to{opacity:1;transform:none}}
+.hero .lede,.hero-ctas,.kicker{animation:rise .7s ease-out .55s both}
+.hero-ctas{animation-delay:.7s}
+.floaters{position:absolute;inset:0;overflow:hidden;border-radius:var(--r-lg);z-index:0;pointer-events:none}
+.floaters span{position:absolute;opacity:.09;animation:drift var(--d,14s) ease-in-out infinite alternate}
+.floaters svg{width:100%;height:auto}
+@keyframes drift{from{transform:translateY(0) rotate(var(--r0,-8deg))}to{transform:translateY(-26px) rotate(var(--r1,8deg))}}
+.sticker{position:absolute;right:34px;bottom:36px;z-index:3;transform:rotate(-8deg);background:var(--rani);color:#fff;border-radius:18px;padding:12px 16px 10px;font:900 26px/1 var(--display);font-stretch:85%;box-shadow:0 10px 20px -8px rgba(0,0,0,.45);border:2px dashed rgba(255,255,255,.6);animation:stickIn .5s cubic-bezier(.3,1.6,.5,1) 2.6s both}
+.sticker small{display:block;font:700 11px/1.2 var(--body);margin-top:4px;opacity:.9}
+@keyframes stickIn{from{opacity:0;transform:rotate(-30deg) scale(.4)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+.bigtag{transition:transform .3s}
+.hanger:hover .bigtag{transform:rotate(2deg)}
+@media (max-width:900px){.hero-card{min-height:0}.sticker{right:18px;bottom:auto;top:-14px}}
+/* measuring tape */
+.tape{position:relative;margin:22px 0 0;height:58px;border-radius:12px;overflow:hidden;background:var(--marigold);box-shadow:inset 0 -2px 0 rgba(0,0,0,.12),var(--shadow);transform:rotate(-1deg)}
+.tape::before{content:"";position:absolute;inset:0 0 auto;height:14px;background:repeating-linear-gradient(90deg,var(--indigo) 0 2px,transparent 2px 12px),repeating-linear-gradient(90deg,var(--indigo) 0 2px,transparent 2px 60px);background-size:auto 8px,auto 14px;background-repeat:repeat-x;opacity:.75}
+.tape-track{position:absolute;top:18px;left:0;display:flex;gap:44px;white-space:nowrap;font:800 18px/1 var(--display);font-stretch:95%;color:var(--indigo);animation:tape 46s linear infinite;padding-left:24px}
+.tape-track span{display:inline-flex;align-items:center;gap:44px}
+.tape-track span::after{content:"✂";font-size:16px;opacity:.6}
+.tape:hover .tape-track{animation-play-state:paused}
+@keyframes tape{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tape-track{animation:none}.floaters{display:none}.sd-mask{stroke-dashoffset:0}}
+/* journey tiles */
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.jt{position:relative;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);background:var(--paper);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);overflow:hidden;transition:transform .25s cubic-bezier(.3,.7,.2,1),box-shadow .25s;min-height:260px}
+.jt:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 0 0 1px rgba(45,90,39,.1),0 24px 40px -20px rgba(21,66,18,.45)}
+.jt .ji{width:100%;height:110px;border-radius:20px;display:grid;place-items:center}
+.jt .ji svg{height:96px;width:auto;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.jt:hover .ji svg{transform:rotate(-8deg) scale(1.08)}
+.jt h3{font-size:22px}
+.jt p{font-size:14.5px;color:var(--ink-2)}
+.jt .go{margin-top:auto;font-weight:800;font-size:14px;color:var(--indigo-2);display:inline-flex;gap:8px;align-items:center}
+.jt .go i{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--indigo);position:relative;transition:transform .2s}
+.jt .go i::after{content:"";position:absolute;inset:0;margin:auto;width:8px;height:8px;border-top:2.5px solid #fff;border-right:2.5px solid #fff;transform:translateX(-1px) rotate(45deg)}
+.jt:hover .go i{transform:translateX(4px)}
+.jt .badge{position:absolute;top:16px;right:16px;font:800 12px/1 var(--body);padding:6px 9px;border-radius:999px;background:var(--marigold);color:var(--indigo)}
+@media (max-width:980px){.journey{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.journey{grid-template-columns:1fr}.jt{min-height:0}}
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease-out,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+/* haul swing */
+.hang.swung svg{animation:hangSwing .9s cubic-bezier(.3,.6,.3,1)}
+@keyframes hangSwing{0%{transform:rotate(0)}25%{transform:rotate(-9deg)}55%{transform:rotate(6deg)}80%{transform:rotate(-2deg)}100%{transform:rotate(0)}}
+.hang svg{transform-origin:50% 0}
+.hang:hover{transform:translateY(-3px)}
+.meter .v{transition:color .3s}
+.meter.bump .v{color:var(--leaf)}
+/* confetti scraps */
+.scraps{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden}
+.scraps i{position:absolute;width:var(--w);height:var(--h);background:var(--c);border-radius:3px;outline:1.5px dashed rgba(255,255,255,.7);outline-offset:-4px;animation:scrap var(--t) cubic-bezier(.15,.6,.4,1) forwards}
+@keyframes scrap{0%{transform:translate(0,0) rotate(0);opacity:1}100%{transform:translate(var(--x),var(--y)) rotate(var(--rot));opacity:0}}
+/* score ring animate */
+.score-ring circle:nth-child(2){transition:stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1)}
+/* footer */
+footer{padding-top:60px;position:relative;overflow:hidden}
+.foot-big{display:flex!important;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:38px;padding-bottom:32px;border-bottom:2px dashed rgba(255,255,255,.25)}
+.foot-word{font:900 clamp(56px,11vw,150px)/.88 var(--display);font-stretch:130%;color:var(--marigold);letter-spacing:-.03em;margin:0}
+.foot-badge{display:flex;gap:16px;align-items:center;max-width:360px}
+.foot-badge span{flex:none;width:86px;height:86px;border-radius:50%;background:var(--rani);color:#fff;display:grid;place-items:center;text-align:center;font:800 14px/1 var(--body);border:3px dashed rgba(255,255,255,.55);outline:6px solid var(--rani)}
+.foot-badge span b{display:block;font:900 34px/1 var(--display)}
+.foot-badge p{font-size:14.5px;color:rgba(255,255,255,.8)}
+/* mobile bottom nav */
+.bottomnav{display:none}
+@media (max-width:760px){
+  .tabs{display:none}
+  .bottomnav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:60;background:rgba(21,66,18,.94);backdrop-filter:blur(10px);border-radius:22px;padding:6px;box-shadow:0 16px 30px -12px rgba(0,0,0,.5)}
+  .bottomnav a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;border-radius:16px;color:rgba(255,255,255,.75);text-decoration:none;font-size:11.5px;font-weight:700}
+  .bottomnav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .bottomnav a[aria-current="page"]{background:var(--marigold);color:var(--indigo)}
+  body{padding-bottom:96px}
+  .toasts{bottom:100px}
+}
+/* view transitions */
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+
 /* Toasts */
 .toasts{position:fixed;bottom:20px;right:20px;z-index:80;display:grid;gap:8px;max-width:calc(100% - 40px)}
 .toast{background:var(--indigo);color:#fff;padding:13px 18px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);display:flex;gap:10px;align-items:center;animation:tin .25s ease-out}
@@ -405,6 +510,13 @@ footer{background:var(--indigo);color:rgba(255,255,255,.85);padding:40px 0;margi
 footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
 footer a{color:#fff}
 footer nav{display:flex;flex-wrap:wrap;gap:16px}
+
+@media (max-width:760px){
+  .toasts{bottom:calc(100px + env(safe-area-inset-bottom));right:12px;left:12px}
+  .top .wrap{flex-wrap:nowrap;min-height:62px;padding-block:6px}
+  .kicker{margin-top:26px}
+  .sticker{font-size:20px;padding:9px 12px 8px;top:-12px}
+}
 </style>
 </head>
 <body>
@@ -437,9 +549,13 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 <!-- ================= REALITY ================= -->
 <section class="view" id="view-reality" aria-labelledby="h-reality">
   <div class="wrap hero">
-    <div class="denim hero-grid">
+    <div class="denim hero-grid hero-card">
+      <svg class="stitch-draw" aria-hidden="true"><defs><mask id="stitch-mask"><rect class="sd-mask" x="10" y="10" width="calc(100% - 20px)" height="calc(100% - 20px)" rx="24" pathLength="1000"/></mask></defs><rect class="sd-dash" x="10" y="10" width="calc(100% - 20px)" height="calc(100% - 20px)" rx="24" mask="url(#stitch-mask)"/></svg>
+      <div class="floaters" aria-hidden="true" id="floaters"></div>
+      <span class="sticker" aria-hidden="true">SDG 12<small>Responsible consumption</small></span>
       <div style="position:relative;z-index:1">
-        <h1 id="h-reality">Your outfit shouldn’t cost<span class="stretch">the planet.</span></h1>
+        <p class="kicker"><span class="dot"></span> A youth project for UN SDG 12</p>
+        <h1 id="h-reality"><span class="h1a">Your outfit</span> <span class="h1b">shouldn’t cost</span><span class="stretch">the planet.</span></h1>
         <p class="lede">The price on a fast-fashion tag leaves out the water, the carbon and the landfill. EcoThread shows you the full cost, then helps you thrift, mend and swap your way to a closet you actually love.</p>
         <div class="hero-ctas">
           <a class="btn btn-mari" href="#quiz" data-go="quiz">Take the closet quiz</a>
@@ -462,15 +578,26 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
         </div>
       </div>
     </div>
-    <div class="facts">
+    <div class="tape" aria-label="Fast facts">
+      <div class="tape-track" id="tape"></div>
+    </div>
+    <div class="facts reveal">
       <div class="fact"><div class="num">2–10%</div><p>of global greenhouse emissions come from fashion. Estimates vary a lot, and most studies land near the low end.<sup><a href="#src-emissions">1</a></sup></p></div>
-      <div class="fact"><div class="num">7.8 Mt</div><p>of textile waste piles up in India every year, about 8.5% of the world’s total.<sup><a href="#src-india">2</a></sup></p></div>
-      <div class="fact"><div class="num">&lt;1%</div><p>of material used for clothing gets recycled into new clothes. One garbage truck of textiles is burned or dumped every second.<sup><a href="#src-emf">3</a></sup></p></div>
+      <div class="fact"><div class="num"><span data-count="7.8" data-dec="1">7.8</span> Mt</div><p>of textile waste piles up in India every year, about 8.5% of the world’s total.<sup><a href="#src-india">2</a></sup></p></div>
+      <div class="fact"><div class="num">&lt;<span data-count="1">1</span>%</div><p>of material used for clothing gets recycled into new clothes. One garbage truck of textiles is burned or dumped every second.<sup><a href="#src-emf">3</a></sup></p></div>
     </div>
   </div>
 
-  <div class="wrap section" style="padding-top:30px">
-    <div class="section-head">
+  <div class="wrap section" style="padding-top:44px">
+    <div class="section-head reveal">
+      <div><h2>Four ways to start</h2></div>
+      <p>Pick one. Every action earns eco-points, and the real ones count towards the carbon and water you’ve avoided.</p>
+    </div>
+    <div class="journey reveal" id="journey"></div>
+  </div>
+
+  <div class="wrap section" style="padding-top:20px">
+    <div class="section-head reveal">
       <div><h2>Build a haul</h2></div>
       <p>Five pieces on the rail. Tap each one to switch between buying it new and finding it secondhand, and watch the totals change.</p>
     </div>
@@ -487,7 +614,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
   </div>
 
   <div class="wrap section" style="padding-top:0">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><h2>Read the real price tag</h2></div>
       <div class="chips" id="decoder-chips" role="group" aria-label="Pick a garment"></div>
     </div>
@@ -495,7 +622,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
   </div>
 
   <div class="wrap section" style="padding-top:0">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><h2>Myth or reality?</h2></div>
       <p>Four things most of us believe about clothes. Tap a card to flip it.</p>
     </div>
@@ -557,7 +684,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 <!-- ================= LAB ================= -->
 <section class="view" id="view-lab" aria-labelledby="h-lab">
   <div class="wrap section">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><h2 id="h-lab">Mend &amp; make</h2></div>
       <p>Six projects you can do with scissors, a needle and a free afternoon. Tick off each step as you go.</p>
     </div>
@@ -592,7 +719,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 <!-- ================= SWAP ================= -->
 <section class="view" id="view-swap" aria-labelledby="h-swap">
   <div class="wrap section">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><h2 id="h-swap">Swap hub</h2></div>
       <button class="btn btn-rani" type="button" id="open-list">List something to swap</button>
     </div>
@@ -668,7 +795,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 <!-- ================= CLOSET ================= -->
 <section class="view" id="view-closet" aria-labelledby="h-closet">
   <div class="wrap section">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><h2 id="h-closet">My closet</h2></div>
       <p>Log what you own and tap “+1” each time you wear it. Cost per wear drops with every outfit repeat. Saved in this browser only.</p>
     </div>
@@ -707,7 +834,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 <!-- ================= SOURCES ================= -->
 <section class="view" id="view-sources" aria-labelledby="h-sources">
   <div class="wrap section">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><h2 id="h-sources">Sources &amp; method</h2></div>
       <p>Every number on EcoThread comes from one of these sources or from an assumption listed below. Where studies disagree, we show the range.</p>
     </div>
@@ -721,13 +848,25 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 </main>
 
 <footer>
+  <div class="wrap foot-big">
+    <p class="foot-word" aria-hidden="true">Wear it again.</p>
+    <div class="foot-badge"><span>SDG<b>12</b></span><p>A youth project for UN Sustainable Development Goal 12: Responsible Consumption and Production.</p></div>
+  </div>
   <div class="wrap">
-    <div><b style="font:900 22px/1 var(--display);font-stretch:118%;color:#fff">EcoThread</b><p class="small" style="margin-top:6px">A youth project for UN SDG 12, Responsible Consumption and Production.</p></div>
+    <div><b style="font:900 22px/1 var(--display);font-stretch:118%;color:#fff">EcoThread</b><p class="small" style="margin-top:6px">Every number on this site is sourced. <a href="#sources" data-go="sources">See how.</a></p></div>
     <nav aria-label="Footer">
       <a href="#reality" data-go="reality">The reality</a><a href="#quiz" data-go="quiz">Quiz</a><a href="#lab" data-go="lab">Mend &amp; make</a><a href="#swap" data-go="swap">Swap hub</a><a href="#closet" data-go="closet">My closet</a><a href="#sources" data-go="sources">Sources</a>
     </nav>
   </div>
 </footer>
+
+<nav class="bottomnav" aria-label="Sections (mobile)">
+  <a href="#reality" data-go="reality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4 3 7l2 4 2-1v10h10V10l2 1 2-4-4-3c-1 2-3 3-5 3S8 6 7 4Z"/></svg>Reality</a>
+  <a href="#quiz" data-go="quiz"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Quiz</a>
+  <a href="#lab" data-go="lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 18 6M15 3l6 6M6 14l4 4"/></svg>Make</a>
+  <a href="#swap" data-go="swap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Swap</a>
+  <a href="#closet" data-go="closet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6a2 2 0 1 1 2 2l-2 1v2L3 17h18l-9-6"/></svg>Closet</a>
+</nav>
 
 <!-- Dialogs -->
 <dialog id="dlg-guide" aria-labelledby="g-title"><div class="dlg" id="guide-body"></div></dialog>
@@ -844,15 +983,46 @@ const SHAPES = {
   knit:"M40 22 L22 28 L8 92 L22 94 L32 56 L32 104 L88 104 L88 56 L98 94 L112 92 L98 28 L80 22 Q60 34 40 22Z"
 };
 const ART_COLORS = {tee:"#C8432F",jeans:"#41608F",hoodie:"#E8A317",jacket:"#5B7BA8",kurta:"#3B6934",bag:"#B5793A",skirt:"#9C4A6E",knit:"#6C8F5E"};
+let ART_N = 0;
+function shade(hex, amt){ // amt -1..1, negative darkens
+  let n = parseInt(hex.slice(1),16), r=n>>16, g=(n>>8)&255, b=n&255;
+  const f = v => Math.max(0, Math.min(255, Math.round(amt<0 ? v*(1+amt) : v+(255-v)*amt)));
+  return "#"+((1<<24)+(f(r)<<16)+(f(g)<<8)+f(b)).toString(16).slice(1);
+}
+const DETAILS = {
+  tee: c => '<path d="M46 23 Q60 33 74 23" fill="none" stroke="'+shade(c,-.35)+'" stroke-width="4" stroke-linecap="round"/>'+
+            '<path d="M14 49 L27 55 M106 49 L93 55" stroke="'+shade(c,-.3)+'" stroke-width="3"/>'+
+            '<path d="M60 30 V100" stroke="'+shade(c,-.12)+'" stroke-width="1.5" opacity=".5"/>',
+  jeans: c => '<rect x="34" y="14" width="52" height="9" fill="'+shade(c,-.3)+'"/>'+
+            '<path d="M40 14v9M50 14v9M70 14v9M80 14v9" stroke="'+shade(c,-.5)+'" stroke-width="2"/>'+
+            '<path d="M60 23 V48" stroke="#E8A317" stroke-width="1.6" stroke-dasharray="3 2"/>'+
+            '<path d="M37 26 Q44 36 52 28 M83 26 Q76 36 68 28" fill="none" stroke="#E8A317" stroke-width="1.6" stroke-dasharray="3 2"/>'+
+            '<circle cx="60" cy="18.5" r="2.4" fill="#E8C46A"/><circle cx="38" cy="28" r="1.6" fill="#E8C46A"/><circle cx="82" cy="28" r="1.6" fill="#E8C46A"/>',
+  hoodie: c => '<path d="M48 27 Q60 12 72 27 Q60 36 48 27Z" fill="'+shade(c,-.45)+'"/>'+
+            '<path d="M55 33 V48 M65 33 V48" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="55" cy="49" r="2" fill="#fff"/><circle cx="65" cy="49" r="2" fill="#fff"/>'+
+            '<path d="M44 68 H76 L73 88 H47Z" fill="'+shade(c,-.18)+'"/><path d="M30 98 H90 M10 70 L24 74 M110 70 L96 74" stroke="'+shade(c,-.32)+'" stroke-width="4"/>',
+  jacket: c => '<path d="M40 18 L52 40 L60 36 L68 40 L80 18 L72 16 L60 30 L48 16Z" fill="'+shade(c,-.28)+'"/>'+
+            '<rect x="38" y="52" width="14" height="11" rx="2" fill="'+shade(c,-.18)+'"/><rect x="68" y="52" width="14" height="11" rx="2" fill="'+shade(c,-.18)+'"/>'+
+            [48,62,76,90].map(y=>'<circle cx="64.5" cy="'+y+'" r="2" fill="#E8C46A"/>').join("")+
+            '<path d="M32 98 H57 M63 98 H88" stroke="'+shade(c,-.3)+'" stroke-width="4"/>',
+  kurta: c => '<path d="M60 18 V46" stroke="'+shade(c,.5)+'" stroke-width="2.5"/>'+[26,33,40].map(y=>'<circle cx="60" cy="'+y+'" r="1.8" fill="#fff"/>').join("")+
+            '<path d="M32 100 H88" stroke="#E8A317" stroke-width="5"/><path d="M32 100 H88" stroke="#C8432F" stroke-width="2" stroke-dasharray="2 3"/>'+
+            '<path d="M35 112 L37 92 M85 112 L83 92" stroke="'+shade(c,-.4)+'" stroke-width="2"/>'+
+            '<path d="M17 52 L29 56 M103 52 L91 56" stroke="#E8A317" stroke-width="3"/>',
+  bag: c => '<path d="M44 46 Q44 16 60 16 Q76 16 76 46" fill="none" stroke="'+shade(c,-.35)+'" stroke-width="7" stroke-linecap="round"/>'+
+            '<path d="M28 46 H92 L90 66 H30Z" fill="'+shade(c,-.2)+'"/><rect x="55" y="60" width="10" height="9" rx="2" fill="#E8C46A"/>',
+  skirt: c => '<rect x="40" y="28" width="40" height="7" fill="'+shade(c,-.3)+'"/>'+[46,54,62,70].map((x,i)=>'<path d="M'+x+' 35 L'+(x-14+i*9.5)+' 100" stroke="'+shade(c,-.25)+'" stroke-width="2"/>').join(""),
+  knit: c => '<path d="M46 23 Q60 33 74 23" fill="none" stroke="'+shade(c,-.35)+'" stroke-width="5"/>'+
+            '<path d="M32 98 H88 M9 86 L23 88 M111 86 L97 88" stroke="'+shade(c,-.3)+'" stroke-width="6" stroke-dasharray="2 2"/>'+
+            '<path d="M50 38 q4 6 0 12 q-4 6 0 12 q4 6 0 12 q-4 6 0 12 M70 38 q4 6 0 12 q-4 6 0 12 q4 6 0 12 q-4 6 0 12" fill="none" stroke="'+shade(c,-.22)+'" stroke-width="3"/>'
+};
 function art(key, color){
-  const d = SHAPES[key] || SHAPES.tee, c = color || ART_COLORS[key] || "#3B6934";
-  let extra = "";
-  if(key==="bag") extra = '<path d="M44 46 Q44 18 60 18 Q76 18 76 46" fill="none" stroke="'+c+'" stroke-width="7" stroke-linecap="round"/>';
-  if(key==="hoodie") extra = '<path d="M46 66 H74 L72 84 H48Z" fill="rgba(0,0,0,.12)"/>';
-  if(key==="kurta") extra = '<path d="M60 22 V44" stroke="rgba(255,255,255,.8)" stroke-width="3"/><circle cx="60" cy="30" r="2" fill="#fff"/><circle cx="60" cy="38" r="2" fill="#fff"/>';
-  if(key==="jeans") extra = '<path d="M34 24 H86" stroke="rgba(255,255,255,.5)" stroke-width="3"/>';
-  return '<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path d="'+d+'" fill="'+c+'"/>'+extra+
-    '<path d="'+d+'" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2.4" stroke-dasharray="5 4" transform="translate(6 6) scale(.9)"/></svg>';
+  const d = SHAPES[key] || SHAPES.tee, c = color || ART_COLORS[key] || "#3B6934", id = "g"+(++ART_N);
+  const det = DETAILS[key] ? DETAILS[key](c) : "";
+  return '<svg viewBox="0 0 120 124" aria-hidden="true" focusable="false"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+shade(c,.18)+'"/><stop offset=".55" stop-color="'+c+'"/><stop offset="1" stop-color="'+shade(c,-.22)+'"/></linearGradient></defs>'+
+    '<ellipse cx="60" cy="117" rx="38" ry="4.5" fill="rgba(28,42,26,.14)"/>'+
+    '<path d="'+d+'" fill="url(#'+id+')" stroke="'+shade(c,-.35)+'" stroke-width="1.4" stroke-linejoin="round"/>'+det+
+    '<path d="'+d+'" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" stroke-dasharray="4.5 3.5" transform="translate(6 6) scale(.9)"/></svg>';
 }
 function mendArt(){
   return '<svg viewBox="0 0 120 120" aria-hidden="true"><rect x="18" y="18" width="84" height="84" rx="10" fill="#3B6934"/>'+
@@ -1041,12 +1211,18 @@ function route(){
   if(!view && h.startsWith("src-")){ view = "sources"; anchor = h; }
   view = view || "reality";
   VIEWS.forEach(v => $("#view-"+v).classList.toggle("on", v===view));
-  $$(".tab").forEach(t => t.dataset.go===view ? t.setAttribute("aria-current","page") : t.removeAttribute("aria-current"));
+  $$(".tab, .bottomnav a").forEach(t => t.dataset.go===view ? t.setAttribute("aria-current","page") : t.removeAttribute("aria-current"));
+  observeReveals();
   if(anchor){ const t = document.getElementById(anchor); if(t) setTimeout(()=>t.scrollIntoView({block:"center"}), 30); }
   else window.scrollTo(0,0);
   if(view==="closet") renderCloset();
 }
-window.addEventListener("hashchange", route);
+let firstRoute = true;
+window.addEventListener("hashchange", () => {
+  const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(document.startViewTransition && !reduce && !firstRoute){ try { document.startViewTransition(route); return; } catch(e){} }
+  route();
+});
 document.addEventListener("click", e => {
   const b = e.target.closest("button[data-go]");
   if(b){ location.hash = b.dataset.go; }
@@ -1076,10 +1252,11 @@ function haulTotals(flags){
     cost += u ? g.usedPrice : g.newPrice; wears += u ? WEARS.used : WEARS.fast; });
   return {co2, water, cost, cpw:cost/wears};
 }
-function renderMeters(){
+const lastM = {};
+function renderMeters(animate){
   const t = haulTotals(S.haul), base = haulTotals([false,false,false,false,false]);
-  $("#m-co2").textContent = kg(t.co2); $("#m-water").textContent = fmt(t.water)+" L";
-  $("#m-cost").textContent = rupees(t.cost); $("#m-cpw").textContent = rupees(t.cpw);
+  const set = (id, v, f) => { const el = $(id); if(animate && lastM[id]!=null && lastM[id]!==v){ tween(el, lastM[id], v, f); const m = el.closest(".meter"); m.classList.toggle("bump", v < lastM[id]); setTimeout(()=>m.classList.remove("bump"), 900); } else el.textContent = f(v); lastM[id] = v; };
+  set("#m-co2", t.co2, kg); set("#m-water", t.water, n=>fmt(n)+" L"); set("#m-cost", t.cost, rupees); set("#m-cpw", t.cpw, rupees);
   const diff = (a,b,f) => a<b-0.01 ? f(b-a)+" less than all-new" : "";
   $("#d-co2").textContent = diff(t.co2, base.co2, kg);
   $("#d-water").textContent = diff(t.water, base.water, n=>fmt(n)+" L");
@@ -1088,8 +1265,8 @@ function renderMeters(){
 }
 $("#rack").addEventListener("click", e => {
   const b = e.target.closest(".hang"); if(!b) return;
-  const i = +b.dataset.i; S.haul[i] = !S.haul[i]; save(); renderRack(); renderMeters();
-  $$(".hang")[i].focus();
+  const i = +b.dataset.i; S.haul[i] = !S.haul[i]; save(); renderRack(); renderMeters(true);
+  const nb = $$(".hang")[i]; nb.classList.add("swung"); nb.focus();
 });
 
 let decoderKey = "tee";
@@ -1185,7 +1362,7 @@ function showResults(){
   $("#quiz-layout").hidden = true;
   const R = $("#quiz-results"); R.hidden = false;
   R.innerHTML =
-   '<div class="denim result-top"><div class="score-ring" style="position:relative;z-index:1"><svg viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="64" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="14"/><circle cx="75" cy="75" r="64" fill="none" stroke="#E8A317" stroke-width="14" stroke-linecap="round" stroke-dasharray="'+circ+'" stroke-dashoffset="'+off+'"/></svg><div class="n"><div>'+score+'<small>out of 100</small></div></div></div>'+
+   '<div class="denim result-top"><div class="score-ring" style="position:relative;z-index:1"><svg viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="64" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="14"/><circle cx="75" cy="75" r="64" fill="none" stroke="#E8A317" stroke-width="14" stroke-linecap="round" stroke-dasharray="'+circ+'" stroke-dashoffset="'+off+'"/></svg><div class="n"><div>'+'<span data-count="'+score+'">'+score+'</span>'+'<small>out of 100</small></div></div></div>'+
    '<div style="position:relative;z-index:1"><span class="badge">'+esc(A.badge)+'</span><h2 id="res-title" tabindex="-1">'+esc(A.name)+'</h2><p class="muted" style="margin-top:10px;max-width:52ch;color:rgba(255,255,255,.85)">'+esc(A.desc)+'</p></div>'+
    '<div class="result-art" style="position:relative;z-index:1">'+artHtml+'</div></div>'+
    '<div class="res-stats">'+
@@ -1197,7 +1374,12 @@ function showResults(){
    '<div class="challenges">'+A.challenges.map((c,i)=>{ const has = S.commits.some(x=>x.t===c.t);
       return '<div class="chal"><div><b>'+esc(c.t)+'</b></div><button type="button" class="btn btn-sm '+(has?"btn-ghost":"btn-ink")+'" data-commit="'+i+'" '+(has?"disabled":"")+'>'+(has?"Committed":"Commit to this")+'</button></div>'; }).join("")+'</div>'+
    '<div class="share-row"><img id="share-img" alt="Your EcoThread closet score card: '+score+' out of 100, '+esc(A.name)+'"><div><h3 style="font-size:26px">Share your score</h3><p class="muted" style="margin:8px 0 16px">Press and hold the card (or right-click it) to save the image for your story. Or copy a line of text.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-mari" type="button" id="copy-res">Copy text</button><button class="btn btn-ghost" type="button" id="retake">Retake the quiz</button></div><p class="small muted" id="copy-fallback" style="margin-top:10px"></p></div></div>';
-  $("#res-title").focus();
+  $("#res-title").focus({preventScroll:true});
+  window.scrollTo({top: Math.max(0, R.getBoundingClientRect().top + window.scrollY - 220), behavior:"instant"});
+  const ring = $("#quiz-results .score-ring circle:nth-child(2)");
+  if(ring){ ring.style.strokeDashoffset = circ; requestAnimationFrame(()=>requestAnimationFrame(()=>{ ring.style.strokeDashoffset = off; })); }
+  $$("#quiz-results [data-count]").forEach(el=>countUp(el));
+  scraps($("#quiz-results .score-ring"));
   drawShareCard();
   if(!S.quizDone){ S.quizDone = true; addPoints(POINTS.quiz, "Closet quiz finished"); }
 }
@@ -1523,11 +1705,65 @@ function renderSources(){
   $("#assume-list").innerHTML = ASSUMPTIONS.map(a=>'<li>'+esc(a)+'</li>').join("");
 }
 
+/* ===================== v3 motion helpers ===================== */
+const REDUCE = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function tween(el, from, to, f, ms){
+  if(REDUCE){ el.textContent = f(to); return; }
+  ms = ms || 700; const t0 = performance.now();
+  const step = now => { const p = Math.min(1, (now-t0)/ms), e = 1-Math.pow(1-p,3); el.textContent = f(from+(to-from)*e); if(p<1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+function countUp(el){
+  if(el.dataset.done) return; el.dataset.done = "1";
+  const to = parseFloat(el.dataset.count), dec = +(el.dataset.dec||0);
+  tween(el, 0, to, v => dec ? v.toFixed(dec) : Math.round(v).toLocaleString("en-IN"), 1100);
+}
+let revealObs = null;
+function observeReveals(){
+  if(!("IntersectionObserver" in window) || REDUCE){ $$(".reveal").forEach(e=>e.classList.add("in")); $$("[data-count]").forEach(countUp); return; }
+  if(!revealObs) revealObs = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); $$("[data-count]", en.target).forEach(countUp); revealObs.unobserve(en.target); } }), {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  $$(".view.on .reveal:not(.in)").forEach(e=>revealObs.observe(e));
+}
+function scraps(origin){
+  if(REDUCE || !origin) return;
+  const r = origin.getBoundingClientRect(), box = document.createElement("div"); box.className = "scraps"; box.setAttribute("aria-hidden","true");
+  const cols = ["#C8432F","#E8A317","#3B6934","#41608F","#FFDEAE","#A1D494"];
+  for(let i=0;i<46;i++){
+    const s = document.createElement("i"), ang = Math.random()*Math.PI*2, dist = 140+Math.random()*320;
+    s.style.cssText = "left:"+(r.left+r.width/2)+"px;top:"+(r.top+r.height/2)+"px;--w:"+(10+Math.random()*16)+"px;--h:"+(8+Math.random()*12)+"px;--c:"+cols[i%cols.length]+";--x:"+Math.cos(ang)*dist+"px;--y:"+(Math.sin(ang)*dist+160)+"px;--rot:"+(Math.random()*720-360)+"deg;--t:"+(1.1+Math.random()*.9)+"s";
+    box.appendChild(s);
+  }
+  document.body.appendChild(box); setTimeout(()=>box.remove(), 2300);
+}
+function renderTape(){
+  const facts = ["2,700 L of water behind one cotton tee","Less than 1% of clothing material is recycled into new clothes","7.8 million tonnes of textile waste a year in India","One garbage truck of textiles burned or dumped every second","Clothes are worn 36% fewer times than in 2000","35% of primary ocean microplastics come from washing synthetics","Swapping is free"];
+  const run = facts.map(f=>"<span>"+esc(f)+"</span>").join("");
+  $("#tape").innerHTML = run + run;
+}
+function renderFloaters(){
+  const items = [["tee",8,14,70,-10,6,16],["jeans",62,62,60,8,-6,19],["knit",40,6,54,-4,10,22],["kurta",84,8,58,6,-8,17],["bag",20,70,46,-12,4,21]];
+  $("#floaters").innerHTML = items.map(([k,x,y,w,r0,r1,d])=>'<span style="left:'+x+'%;top:'+y+'%;width:'+w+'px;--r0:'+r0+'deg;--r1:'+r1+'deg;--d:'+d+'s">'+art(k,"#ffffff")+'</span>').join("");
+}
+function renderJourney(){
+  const T = [
+    {go:"quiz", bg:"#FFDAD4", art:art("tee"), t:"Take the closet quiz", d:"Six questions, a live footprint estimate and a score card to share.", b:"2 min"},
+    {go:"lab", bg:"#FCF4E3", art:mendArt(), t:"Mend or make something", d:"Six step-by-step projects, from a no-sew crop to a sashiko patch.", b:"From 5 min"},
+    {go:"swap", bg:"#E5EFE4", art:rackArt(), t:"Swap instead of shop", d:"List a piece, request a swap and plan a swap day at school.", b:"₹0"},
+    {go:"closet", bg:"#E6EDF7", art:art("jeans"), t:"Track your closet", d:"Log what you own and watch cost per wear drop with every outfit repeat.", b:"Saves progress"}
+  ];
+  $("#journey").innerHTML = T.map(x=>'<a class="jt" href="#'+x.go+'" data-go="'+x.go+'"><span class="badge">'+esc(x.b)+'</span><div class="ji" style="background:'+x.bg+'">'+x.art+'</div><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p><span class="go">Start <i aria-hidden="true"></i></span></a>').join("");
+}
+function sizeStitch(){
+  const svg = $(".stitch-draw"); if(!svg) return; const r = svg.getBoundingClientRect(); if(!r.width) return;
+  $$("rect", svg).forEach(rc=>{ rc.setAttribute("width", Math.max(0, r.width-20)); rc.setAttribute("height", Math.max(0, r.height-20)); });
+}
+window.addEventListener("resize", sizeStitch);
+
 /* ===================== Boot ===================== */
-function renderAll(){ renderRules(); renderKit(); renderRack(); renderMeters(); renderDecoder(); renderMyths(); renderQuiz(); renderGuides(); renderFabric(); renderModeNote(); renderSwap(); renderEvents(); renderPledges(); renderCloset(); renderSources(); renderHud();
+function renderAll(){ renderTape(); renderFloaters(); renderJourney(); renderRules(); renderKit(); renderRack(); renderMeters(); renderDecoder(); renderMyths(); renderQuiz(); renderGuides(); renderFabric(); renderModeNote(); renderSwap(); renderEvents(); renderPledges(); renderCloset(); renderSources(); renderHud();
   $("#quiz-results").hidden = true; $("#quiz-layout").hidden = false; }
 qStep = 0; qAns = [];
-renderAll(); route(); connectShared();
+renderAll(); route(); firstRoute = false; sizeStitch(); setTimeout(sizeStitch, 300); connectShared();
 </script>
 </body>
 </html>
