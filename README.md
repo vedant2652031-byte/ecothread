@@ -2,6 +2,8 @@
 
 EcoThread is a website that helps teenagers see the hidden cost of fast fashion and switch to thrifting, mending and swapping. It's a youth project for **UN Sustainable Development Goal 12: Responsible Consumption and Production** (Targets 12.5 and 12.8).
 
+**Live site: [ecothread-nine.vercel.app](https://ecothread-nine.vercel.app)**
+
 The whole site is one file, `index.html`. It needs no install or build step.
 
 ## What's on the site
@@ -26,6 +28,8 @@ The whole site is one file, `index.html`. It needs no install or build step.
 Open `index.html` in any browser.
 
 ## Put it online
+
+The live site is on **Vercel** and redeploys automatically whenever `main` changes. Other options:
 
 - **GitHub Pages:** in this repo, go to **Settings → Pages**, choose **Deploy from a branch**, pick `main` and `/ (root)`, then save. The site appears at `https://<your-username>.github.io/<repo-name>/`.
 - **Netlify:** drag `index.html` onto [app.netlify.com/drop](https://app.netlify.com/drop).
